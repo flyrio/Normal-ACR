@@ -46,3 +46,23 @@ D:\QQ文件\AE2.0-main\Shiyuvi\obj\Debug\net7.0\Shiyuvi.dll
 D:\QQ文件\AE2.0-main\Shiyuvi\obj\Debug\net7.0\refint\Shiyuvi.dll
 D:\QQ文件\AE2.0-main\Shiyuvi\obj\Debug\net7.0\Shiyuvi.pdb
 D:\QQ文件\AE2.0-main\Shiyuvi\obj\Debug\net7.0\ref\Shiyuvi.dll
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.csproj.AssemblyReference.cache
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.GeneratedMSBuildEditorConfig.editorconfig
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.AssemblyInfoInputs.cache
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.AssemblyInfo.cs
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.csproj.CoreCompileInputs.cache
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.dll
+F:\Scholar Base\obj\Debug\net7.0\refint\Shiyuvi.dll
+F:\Scholar Base\obj\Debug\net7.0\Shiyuvi.pdb
+F:\AE2.0-main\Scholar Base\bin\Debug\net7.0\Shiyuvi.deps.json
+F:\AE2.0-main\Scholar Base\bin\Debug\net7.0\Shiyuvi.dll
+F:\AE2.0-main\Scholar Base\bin\Debug\net7.0\Shiyuvi.pdb
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.csproj.AssemblyReference.cache
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.GeneratedMSBuildEditorConfig.editorconfig
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.AssemblyInfoInputs.cache
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.AssemblyInfo.cs
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.csproj.CoreCompileInputs.cache
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.dll
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\refint\Shiyuvi.dll
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\Shiyuvi.pdb
+F:\AE2.0-main\Scholar Base\obj\Debug\net7.0\ref\Shiyuvi.dll
