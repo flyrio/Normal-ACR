@@ -2,25 +2,23 @@
 using Common;
 using Common.Define;
 using Common.Helper;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace Shiyuvi.Machinist.GCD;
 
-public class Machinist_SpreadShot : ISlotResolver
+public class Machinist_Bioblaster : ISlotResolver
 {
     public SlotMode SlotMode { get; } = SlotMode.Gcd;
 
     public Spell GetSpell()
     {
-        return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SpreadShot.GetSpell().Id).GetSpell();
+        return SpellsDefine.Bioblaster.GetSpell();
     }
     
     public int Check()
     {
         var aoecount = TargetHelper.GetEnemyCountInsideSector(Core.Me, Core.Me.GetCurrTarget(), 12, 90);
-        if (aoecount < 3) return -5;
-        if (!Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SpreadShot.GetSpell().Id).GetSpell().IsReady()) return -3;
-        return 0;
+        if (!Qt.GetQt("攒资源") && SpellsDefine.Bioblaster.IsReady() && aoecount > 2) return 1;
+        return -1;
     }
 
     public void Build(Slot slot)

@@ -4,18 +4,18 @@ using Common.Define;
 
 namespace Shiyuvi.Machinist.GCD;
 
-public class Machinist_HotShot : ISlotResolver
+public class Machinist_Drill : ISlotResolver
 {
     public SlotMode SlotMode { get; } = SlotMode.Gcd;
 
     public Spell GetSpell()
     {
-        return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.HotShot.GetSpell().Id).GetSpell();
+        return SpellsDefine.Drill.GetSpell();
     }
     
     public int Check()
     {
-        if (Qt.GetQt("攒资源") && !Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.HotShot.GetSpell().Id).GetSpell().IsReady()) return -3;
+        if (Qt.GetQt("攒资源") && !SpellsDefine.Drill.IsReady()) return -3;
         return 0;
     }
 

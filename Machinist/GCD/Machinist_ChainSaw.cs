@@ -1,21 +1,20 @@
 ﻿using CombatRoutine;
-using Common;
 using Common.Define;
 
 namespace Shiyuvi.Machinist.GCD;
 
-public class Machinist_HotShot : ISlotResolver
+public class Machinist_ChainSaw : ISlotResolver
 {
     public SlotMode SlotMode { get; } = SlotMode.Gcd;
 
     public Spell GetSpell()
     {
-        return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.HotShot.GetSpell().Id).GetSpell();
+        return SpellsDefine.ChainSaw.GetSpell();
     }
     
     public int Check()
     {
-        if (Qt.GetQt("攒资源") && !Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.HotShot.GetSpell().Id).GetSpell().IsReady()) return -3;
+        if (Qt.GetQt("攒资源") && !SpellsDefine.ChainSaw.IsReady()) return -3;
         return 0;
     }
 

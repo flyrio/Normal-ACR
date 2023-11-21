@@ -10,7 +10,7 @@ public class Machinist_RookAutoturret : ISlotResolver
 
     public int Check()
     {//电量到50好了就放
-        if (Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.RookAutoturret.GetSpell().Id).GetSpell().IsReady() && Core.Get<IMemApiMCH>().GetBattery() >= 50) return 0;
+        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.RookAutoturret.GetSpell().Id).GetSpell().IsReady() && Core.Get<IMemApiMCH>().GetBattery() >= 50) return 0;
         return -1;
     }
     
