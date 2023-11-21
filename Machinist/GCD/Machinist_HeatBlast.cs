@@ -10,13 +10,13 @@ public class Machinist_HeatBlast : ISlotResolver
 
     public Spell GetSpell()
     {
-        return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.HeatBlast.GetSpell().Id).GetSpell();
+        return SpellsDefine.HeatBlast.GetSpell();
     }
     
     public int Check()
     {
-        if (!SpellsDefine.HotShot.IsReady()) return -3;
-        return 0;
+        if (SpellsDefine.HeatBlast.IsReady() && Core.Get<IMemApiMCH>().OverHeated()) return 3;
+        return -1;
     }
 
     public void Build(Slot slot)

@@ -11,7 +11,7 @@ public class Machinist_Dismantle : ISlotResolver
 
     public int Check()
     {
-        if (SpellsDefine.Dismantle.IsReady() && !Core.Me.GetCurrTarget().HasAura(860) && Qt.GetQt("自动减伤") && TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),3) && !SpellsDefine.Tactician.IsReady()) return 1;
+        if (SpellsDefine.Dismantle.IsReady() && !Core.Me.GetCurrTarget().HasAura(860) && Qt.GetQt("自动减伤") && TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),3) && !SpellsDefine.Tactician.IsReady() && Core.Get<IMemApiMCH>().OverHeated()) return 1;
         return -1;
     }
     

@@ -11,11 +11,8 @@ public class Machinist_GaussRound : ISlotResolver
 
     public int Check()
     {
-        if (!SpellsDefine.GaussRound.IsMaxChargeReady(1)) return -3; //不足一层不打
-        if (Core.Me.ClassLevel < 15) return -3; //等级不足不打
-        if (SpellsDefine.GaussRound.RecentlyUsed(2500)) return -5;//刚打过不打
-        if (Qt.GetQt("攒资源")) return -3;
-        return 0;
+        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetCharges(2874) >= 1 && Core.Me.ClassLevel >= 15 && Core.Get<IMemApiSpell>().GetCharges(2890) <= Core.Get<IMemApiSpell>().GetCharges(2874)) return 1;
+        return -1;
     }
     
     public void Build(Slot slot)

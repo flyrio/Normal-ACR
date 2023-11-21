@@ -1,32 +1,37 @@
-﻿using CombatRoutine;
+using CombatRoutine;
 using Common;
 using Common.Define;
 
 namespace Shiyuvi.Machinist.GCD;
 
-public class Machinist_GCD : ISlotResolver
+public class Machinist_GCD: ISlotResolver
 {
     public SlotMode SlotMode { get; } = SlotMode.Gcd;
 
-    public Spell GetSpell()//逻辑需要在过热前打完3才能正常跑?
+    
+    public Spell GetSpell()
+
     {
-        if (Core.Me.ClassLevel < 26)
-        {//1、2连招
-            if (Core.Get<IMemApiSpell>().GetLastComboSpellId() == Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SplitShot.GetSpell().Id))
-                return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SlugShot.GetSpell().Id).GetSpell();
-            return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SplitShot.GetSpell().Id).GetSpell();
+        var lastComboSpellId = Core.Get<IMemApiSpell>().GetLastComboSpellId();
+        // 刚打完2
+        if (lastComboSpellId == SpellsDefine.SlugShot.GetSpell().Id ||
+            lastComboSpellId == SpellsDefine.HeatedSlugShot.GetSpell().Id)
+        {
+            return Core.Me.ClassLevel >= 26 ? SpellsDefine.CleanShot.GetSpell() : SpellsDefine.SplitShot.GetSpell();
         }
-        //2触发3,1触发2，不符合返回1
-        if (Core.Get<IMemApiSpell>().GetLastComboSpellId() == Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SlugShot.GetSpell().Id))
-            return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.CleanShot.GetSpell().Id).GetSpell();
-        if (Core.Get<IMemApiSpell>().GetLastComboSpellId() == Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SplitShot.GetSpell().Id))
-            return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SlugShot.GetSpell().Id).GetSpell();
-        return Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SplitShot.GetSpell().Id).GetSpell();
+        // 刚打完1
+        if (lastComboSpellId == SpellsDefine.SplitShot.GetSpell().Id ||
+            lastComboSpellId == SpellsDefine.HeatedSplitShot.GetSpell().Id)
+        {
+            return SpellsDefine.SlugShot.GetSpell();
+        }
+        return SpellsDefine.SplitShot.GetSpell();
     }
     
     public int Check()
     {
-        return 0;
+        if (!SpellsDefine.SplitShot.IsReady()) return -1;
+        return 1;
     }
 
     public void Build(Slot slot)

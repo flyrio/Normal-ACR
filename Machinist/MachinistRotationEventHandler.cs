@@ -73,9 +73,6 @@ public class MachinistRotationEventHandler : IRotationEventHandler
                 case SpellsDefine.ChainSaw:
                     AI.Instance.BattleData.LimitAbility = false;
                     break;
-                case SpellsDefine.Scattergun:
-                    AI.Instance.BattleData.LimitAbility = false;
-                    break;
             }
     }
     public void OnBattleUpdate(int currTime)//逐帧

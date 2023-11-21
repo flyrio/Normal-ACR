@@ -14,15 +14,14 @@ public class Machinist_Drill : ISlotResolver
     }
     
     public int Check()
-    {
-        if (Qt.GetQt("攒资源") && !SpellsDefine.Drill.IsReady()) return -3;
-        return 0;
+    {//钻头优先级最高
+        if (Core.Me.HasMyAura(851) && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688)) return 1;
+        if (!Qt.GetQt("攒资源") && !SpellsDefine.Reassemble.IsMaxChargeReady(1) && !Core.Me.HasMyAura(2688) && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds) return 2;
+        return -1;
     }
 
     public void Build(Slot slot)
     {
-        if (SpellsDefine.Reassemble.IsReady())
-            slot.Add(SpellsDefine.Reassemble.GetSpell());
         slot.Add(GetSpell());
     }
 }

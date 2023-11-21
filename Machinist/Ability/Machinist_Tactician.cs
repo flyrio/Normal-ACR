@@ -11,7 +11,7 @@ public class Machinist_Tactician : ISlotResolver
 
     public int Check()
     {
-        if (SpellsDefine.Tactician.IsReady() && !Core.Me.HasAura(1826) && !Core.Me.HasAura(1951) && !Core.Me.HasAura(2177) && !Core.Me.HasAura(1934) && Qt.GetQt("自动减伤") && TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),3)) return 1;
+        if (SpellsDefine.Tactician.IsReady() && !Core.Me.HasAura(1826) && !Core.Me.HasAura(1951) && !Core.Me.HasAura(2177) && !Core.Me.HasAura(1934) && Qt.GetQt("自动减伤") && TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),3) && Core.Get<IMemApiMCH>().OverHeated()) return 1;
         return -1;
     }
     

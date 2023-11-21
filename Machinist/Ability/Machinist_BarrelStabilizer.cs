@@ -10,7 +10,7 @@ public class Machinist_BarrelStabilizer : ISlotResolver
 
     public int Check()
     {
-        if (!Qt.GetQt("攒资源") && SpellsDefine.BarrelStabilizer.IsReady() && Core.Get<IMemApiMCH>().GetHeat() <= 50 && !SpellsDefine.HeatBlast.RecentlyUsed()) return 1;
+        if (!Qt.GetQt("攒资源") && SpellsDefine.BarrelStabilizer.IsReady() && Core.Get<IMemApiMCH>().GetHeat() <= 50) return 1;
         return -1;
     }
     

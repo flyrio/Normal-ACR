@@ -1,4 +1,5 @@
 ﻿using CombatRoutine;
+using Common;
 using Common.Define;
 
 namespace Shiyuvi.Machinist.GCD;
@@ -14,14 +15,13 @@ public class Machinist_ChainSaw : ISlotResolver
     
     public int Check()
     {
-        if (Qt.GetQt("攒资源") && !SpellsDefine.ChainSaw.IsReady()) return -3;
-        return 0;
+        if (Core.Me.HasMyAura(851) && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688)) return 1;
+        if (!Qt.GetQt("攒资源") && !SpellsDefine.Reassemble.IsMaxChargeReady(1) && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688)) return 2;
+        return -1;
     }
 
     public void Build(Slot slot)
     {
-        if (SpellsDefine.Reassemble.IsReady())
-            slot.Add(SpellsDefine.Reassemble.GetSpell());
         slot.Add(GetSpell());
     }
 }
