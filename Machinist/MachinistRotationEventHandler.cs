@@ -16,12 +16,6 @@ public class MachinistRotationEventHandler : IRotationEventHandler
 
     public async Task OnNoTarget()
     {
-        var slot = new Slot();
-        if (Core.Me.HasAura(1199) && Core.Me.ClassLevel >= 20)
-        {
-            slot.Add(SpellsDefine.Peloton.GetSpell());
-        }
-        await slot.Run(false);
     }
     
 

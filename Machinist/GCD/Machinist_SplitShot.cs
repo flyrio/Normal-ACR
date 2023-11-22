@@ -12,23 +12,19 @@ public class Machinist_SplitShot : ISlotResolver
     public Spell GetSpell()
 
     {
-        return SpellsDefine.SplitShot.GetSpell();
+        switch (Core.Me.ClassLevel)
+        {
+            case >= 1 and < 54:
+                return SpellsDefine.SplitShot.GetSpell();
+            case >= 54:
+                return SpellsDefine.HeatedSplitShot.GetSpell();
+        }
+
+        return null;
     }
     
     public int Check()
     {
-        if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
-            SpellsDefine.SplitShot.GetSpell().Id)
-            return -2; //1-2
-        if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
-            SpellsDefine.HeatedSplitShot.GetSpell().Id)
-            return -2; //1-2
-        if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
-            SpellsDefine.SlugShot.GetSpell().Id)
-            return -1; //2-3
-        if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
-            SpellsDefine.HeatedSlugShot.GetSpell().Id)
-            return -1; //2-3
         return 0;
     }
 

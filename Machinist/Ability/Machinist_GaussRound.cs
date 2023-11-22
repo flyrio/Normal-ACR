@@ -11,7 +11,8 @@ public class Machinist_GaussRound : ISlotResolver
 
     public int Check()
     {
-        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetCharges(2874) >= 1 && Core.Me.ClassLevel >= 15 && Core.Get<IMemApiSpell>().GetCharges(2890) <= Core.Get<IMemApiSpell>().GetCharges(2874)) return 1;
+        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetCharges(2874) >= 0.667 && Core.Me.ClassLevel >= 15 && Core.Me.ClassLevel < 74) return 1;
+        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetCharges(2874) >= 1 && Core.Me.ClassLevel >= 74) return 1;
         return -1;
     }
     

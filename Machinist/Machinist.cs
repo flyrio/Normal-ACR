@@ -95,6 +95,13 @@ public class MachinistOverlay
             ImGui.Text($"小队坦克数量：{PartyHelper.CastableTanks.Count}");
             ImGui.TreePop();
         }
+
+        if (ImGui.TreeNode("热量电量"))
+        {
+            ImGui.Text($"热量：{Core.Get<IMemApiMCH>().GetHeat()}");
+            ImGui.Text($"电量：{Core.Get<IMemApiMCH>().GetBattery()}");
+            ImGui.TreePop();
+        }
     }
     
 

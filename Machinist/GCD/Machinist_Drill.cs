@@ -14,9 +14,9 @@ public class Machinist_Drill : ISlotResolver
     }
     
     public int Check()
-    {//钻头优先级最高
-        if (Core.Me.HasMyAura(851) && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688)) return 1;
-        if (!Qt.GetQt("攒资源") && !SpellsDefine.Reassemble.IsMaxChargeReady(1) && !Core.Me.HasMyAura(2688) && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds) return 2;
+    {//有整备，钻头等级足够
+        if (Core.Me.HasMyAura(851) && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688) && Core.Me.ClassLevel >= 58) return 1;
+        if (!Qt.GetQt("攒资源") && SpellsDefine.Drill.IsReady() && !Core.Me.HasMyAura(2688)) return 2;
         return -1;
     }
 

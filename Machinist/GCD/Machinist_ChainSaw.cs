@@ -15,8 +15,8 @@ public class Machinist_ChainSaw : ISlotResolver
     
     public int Check()
     {
-        if (Core.Me.HasMyAura(851) && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688)) return 1;
-        if (!Qt.GetQt("攒资源") && !SpellsDefine.Reassemble.IsMaxChargeReady(1) && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688)) return 2;
+        if (Core.Me.HasMyAura(851) && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds && !Core.Me.HasMyAura(2688) && Core.Me.ClassLevel == 90) return 1;
+        if (!Qt.GetQt("攒资源") && SpellsDefine.ChainSaw.IsReady() && !Core.Me.HasMyAura(2688)) return 2;
         return -1;
     }
 

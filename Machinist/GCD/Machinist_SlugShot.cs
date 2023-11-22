@@ -12,7 +12,15 @@ public class Machinist_SlugShot : ISlotResolver
     public Spell GetSpell()
 
     {
-        return SpellsDefine.SlugShot.GetSpell();
+        switch (Core.Me.ClassLevel)
+        {
+            case >= 2 and < 60:
+                return SpellsDefine.SlugShot.GetSpell();
+            case >= 60:
+                return SpellsDefine.HeatedSlugShot.GetSpell();
+        }
+
+        return null;
     }
     
     public int Check()

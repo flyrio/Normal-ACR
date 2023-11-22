@@ -11,16 +11,16 @@ public class Machinist_Reassemble : ISlotResolver
 
     public int Check()
     {
-        if (!Qt.GetQt("攒资源") && SpellsDefine.Drill.CoolDownInGCDs(1) && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsMaxChargeReady(1)
+        if (!Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel >= 58
             && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds ) return 3;
-        if (!Qt.GetQt("攒资源") && SpellsDefine.HotShot.CoolDownInGCDs(1) && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsMaxChargeReady(1) && Core.Me.ClassLevel < 76
+        if (!Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel < 26
             && SpellsDefine.HotShot.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds ) return 3;
-        if (!Qt.GetQt("攒资源") && SpellsDefine.Bioblaster.CoolDownInGCDs(1) && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsMaxChargeReady(1)
-            && SpellsDefine.Bioblaster.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds ) return 3;
-        if (!Qt.GetQt("攒资源") && SpellsDefine.AirAnchor.CoolDownInGCDs(1) && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsMaxChargeReady(1) && Core.Me.ClassLevel >= 76
+        if (!Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel >= 76
             && SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds ) return 3;
-        if (!Qt.GetQt("攒资源") && SpellsDefine.ChainSaw.CoolDownInGCDs(1) && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsMaxChargeReady(1)
+        if (!Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel == 90
             && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetComboTimeLeft().Milliseconds ) return 3;
+        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetLastComboSpellId() == 2868 && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel >= 26 && Core.Me.ClassLevel < 58) return 3;
+        if (!Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetLastComboSpellId() == 2866 && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel < 26 && Core.Me.ClassLevel >= 10) return 3;
         return -1;
     }
     
