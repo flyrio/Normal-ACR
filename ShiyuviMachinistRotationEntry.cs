@@ -28,14 +28,6 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
 
     public List<ISlotResolver> SlotResolvers = new() //排序
     {
-        new Machinist_Tactician(), //策动
-        new Machinist_Dismantle(), //武装解除
-        new Machinist_Reassemble(), //整备
-        new Machinist_Wildfire(), //野火
-        new Machinist_BarrelStabilizer(), //加热
-        new Machinist_RookAutoturret(), // robot
-        new Machinist_GaussRound(), // 虹吸弹
-        new Machinist_Ricochet(), //弹射
         new Machinist_Bioblaster(), //毒菌
         new Machinist_Drill(), //钻头
         new Machinist_HotShot(), //空气矛
@@ -48,6 +40,15 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         //new Machinist_SlugShot(),
         //new Machinist_SplitShot(),
         new Machinist_GCD(),
+        
+        new Machinist_Tactician(), //策动
+        new Machinist_Dismantle(), //武装解除
+        new Machinist_Reassemble(), //整备
+        new Machinist_Wildfire(), //野火
+        new Machinist_BarrelStabilizer(), //加热
+        new Machinist_RookAutoturret(), // robot
+        new Machinist_GaussRound(), // 虹吸弹
+        new Machinist_Ricochet(), //弹射
     };
     
 

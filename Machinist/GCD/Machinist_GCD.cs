@@ -30,8 +30,7 @@ public class Machinist_GCD: ISlotResolver
     
     public int Check()
     {
-        if (!SpellsDefine.SplitShot.IsReady()) return -1;
-        return 1;
+        return 0;
     }
 
     public void Build(Slot slot)
