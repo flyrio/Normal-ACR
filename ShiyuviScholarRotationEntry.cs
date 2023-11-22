@@ -30,11 +30,19 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
 
     public List<ISlotResolver> SlotResolvers = new() //未排序
     {
+        new Scholar_Resurrect(),//复活
+        new Scholar_GetPet(),//召唤宝宝
+        new Scholar_Esuna(),//驱散
+        new Scholar_AOEGCDHeal(),
+        new Scholar_SingleGCDHeal(),
+        new Scholar_Dot(),
+        new Scholar_AOE(),
+        new Scholar_MoveGCD(),
+        new Scholar_BaseGCD(),
+        
         new Scholar_ChainStrategem(),//连环计
         new Scholar_LucidDreaming(),//醒梦
-        new Scholar_Resurrect(),//复活
         new Scholar_DissolveUnion(),//截断链子
-        new Scholar_GetPet(),//召唤宝宝
         new Scholar_AutoAetherflow(),//以太
         new Scholar_AutoDissipation(),//转化
         new Scholar_Consolation(),//慰藉
@@ -51,13 +59,6 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         new Scholar_Protraction(),//回升法
         new Scholar_EnergyDrain2(),//豆子
         new Scholar_Aetherpact(),//链子
-        new Scholar_Esuna(),//驱散
-        new Scholar_AOEGCDHeal(),
-        new Scholar_SingleGCDHeal(),
-        new Scholar_Dot(),
-        new Scholar_AOE(),
-        new Scholar_MoveGCD(),
-        new Scholar_BaseGCD(),
     };
     
 

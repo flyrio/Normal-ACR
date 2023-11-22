@@ -16,6 +16,7 @@ public class Scholar_MoveGCD : ISlotResolver
     {
         if (Core.Get<IMemApiMove>().IsMoving() && AI.Instance.CanUseGCD()) return 1;
         return -1;
+
     }
     
     public void Build(Slot slot)
