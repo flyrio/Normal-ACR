@@ -83,6 +83,8 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("内丹", new HotKeyResolver_NormalSpell(7541, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("策动", new HotKeyResolver_NormalSpell(16889, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("扳手", new HotKeyResolver_NormalSpell(2887, SpellTargetType.Target, false));
+        jobViewWindow.AddHotkey("速行", new HotKeyResolver_NormalSpell(7557, SpellTargetType.Target, false));
+        jobViewWindow.AddHotkey("喷火器", new HotKeyResolver_NormalSpell(7418, SpellTargetType.Target, false));
         return true;
     }
 }

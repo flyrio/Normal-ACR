@@ -31,10 +31,10 @@ public class Machinist_Hypercharge : ISlotResolver
             (SpellsDefine.HotShot.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= 5000 )) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >=50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 76 && Core.Me.ClassLevel < 90 && SpellsDefine.Hypercharge.IsReady()
             &&
-            (SpellsDefine.HotShot.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds <= 5000 )) return 2;
+            (SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds <= 5000 )) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >=50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel == 90 && SpellsDefine.Hypercharge.IsReady()
             &&
-            (SpellsDefine.HotShot.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds <= 5000  || SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= 5000)) return 2;
+            (SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= 5000 || SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds <= 5000  || SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= 5000)) return 2;
         return -1;
     }
 
