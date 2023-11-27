@@ -16,6 +16,12 @@ public class MachinistRotationEventHandler : IRotationEventHandler
 
     public async Task OnNoTarget()
     {
+        var slot = new Slot();
+        if (SpellsDefine.Peloton.IsReady() && !Core.Me.HasAura(1199) && Core.Get<IMemApiMove>().IsMoving() && !Core.Get<IMemApiCondition>().IsInCombat() && Core.Me.HitboxRadius() == 0.5)
+        {
+            slot.Add(SpellsDefine.Peloton.GetSpell());
+        }
+        await slot.Run(false);
     }
     
 
@@ -31,13 +37,7 @@ public class MachinistRotationEventHandler : IRotationEventHandler
                 case SpellsDefine.SlugShot:
                     AI.Instance.BattleData.LimitAbility = false;
                     break;
-                case SpellsDefine.HotShot:
-                    AI.Instance.BattleData.LimitAbility = false;
-                    break;
                 case SpellsDefine.SpreadShot:
-                    AI.Instance.BattleData.LimitAbility = false;
-                    break;
-                case SpellsDefine.Hypercharge:
                     AI.Instance.BattleData.LimitAbility = false;
                     break;
                 case SpellsDefine.HeatBlast:
@@ -47,6 +47,15 @@ public class MachinistRotationEventHandler : IRotationEventHandler
                     AI.Instance.BattleData.AbilityCount = 0;
                     break;
                 case SpellsDefine.Drill:
+                    AI.Instance.BattleData.LimitAbility = false;
+                    break;
+                case SpellsDefine.HotShot:
+                    AI.Instance.BattleData.LimitAbility = false;
+                    break;
+                case SpellsDefine.ChainSaw:
+                    AI.Instance.BattleData.LimitAbility = false;
+                    break;
+                case SpellsDefine.AirAnchor:
                     AI.Instance.BattleData.LimitAbility = false;
                     break;
                 case SpellsDefine.HeatedSplitShot:
@@ -61,12 +70,7 @@ public class MachinistRotationEventHandler : IRotationEventHandler
                 case SpellsDefine.Bioblaster:
                     AI.Instance.BattleData.LimitAbility = false;
                     break;
-                case SpellsDefine.AirAnchor:
-                    AI.Instance.BattleData.LimitAbility = false;
-                    break;
-                case SpellsDefine.ChainSaw:
-                    AI.Instance.BattleData.LimitAbility = false;
-                    break;
+
             }
     }
     public void OnBattleUpdate(int currTime)//逐帧

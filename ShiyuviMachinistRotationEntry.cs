@@ -33,7 +33,6 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         new Machinist_HotShot(), //空气矛
         new Machinist_ChainSaw(), // 回转飞橘
         new Machinist_AutoCrossbow(), //自动弩
-        new Machinist_Hypercharge(), //超荷
         new Machinist_HeatBlast(), //热冲击
         new Machinist_SpreadShot(), //散射
         new Machinist_CleanShot(), //基础连
@@ -43,6 +42,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         
         new Machinist_Wildfire(), //野火
         new Machinist_Reassemble(), //整备
+        new Machinist_Hypercharge(), //超荷
         new Machinist_BarrelStabilizer(), //加热
         new Machinist_RookAutoturret(), // robot
         new Machinist_Ricochet(), //弹射
@@ -83,7 +83,6 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("内丹", new HotKeyResolver_NormalSpell(7541, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("策动", new HotKeyResolver_NormalSpell(16889, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("扳手", new HotKeyResolver_NormalSpell(2887, SpellTargetType.Target, false));
-        jobViewWindow.AddHotkey("速行", new HotKeyResolver_NormalSpell(7557, SpellTargetType.Target, false));
         jobViewWindow.AddHotkey("喷火器", new HotKeyResolver_NormalSpell(7418, SpellTargetType.Target, false));
         return true;
     }

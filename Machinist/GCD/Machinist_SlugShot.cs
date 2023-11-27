@@ -26,10 +26,10 @@ public class Machinist_SlugShot : ISlotResolver
     public int Check()
     {
         if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
-            SpellsDefine.SplitShot.GetSpell().Id)
+            SpellsDefine.SplitShot.GetSpell().Id && !Core.Me.HasMyAura(851))
             return 1; //1-2
         if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
-            SpellsDefine.HeatedSplitShot.GetSpell().Id)
+            SpellsDefine.HeatedSplitShot.GetSpell().Id && !Core.Me.HasMyAura(851))
             return 2; //1-2
         return -1;
     }
