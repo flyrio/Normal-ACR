@@ -31,35 +31,35 @@ public class Machinist_Hypercharge : ISlotResolver
             && !SpellsDefine.HotShot.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 30000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 0.667
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 500) return 2;
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 600) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 58 && Core.Me.ClassLevel < 74 && SpellsDefine.Hypercharge.IsReady()
             &&
             (SpellsDefine.HotShot.GetSpell().Cooldown.TotalMilliseconds >= 5000 && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds >= 5000 )
             && !SpellsDefine.HotShot.IsReady() && !SpellsDefine.Drill.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 30000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 0.667
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 500) return 2;
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 600) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 74 && Core.Me.ClassLevel < 76 && SpellsDefine.Hypercharge.IsReady()
             &&
             (SpellsDefine.HotShot.GetSpell().Cooldown.TotalMilliseconds >= 5000 && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds >= 5000 )
             && !SpellsDefine.HotShot.IsReady() && !SpellsDefine.Drill.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 30000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 2
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 500) return 2;
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 600) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 76 && Core.Me.ClassLevel < 90 && SpellsDefine.Hypercharge.IsReady()
             &&
             (SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds >= 5000 && SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds >= 5000 )
             && !SpellsDefine.Drill.IsReady() && !SpellsDefine.AirAnchor.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 30000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 2
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 500) return 2;
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 600) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel == 90 && SpellsDefine.Hypercharge.IsReady()
             &&
             (SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds >= 5000 && SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds >= 5000  && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds >= 5000)
             && !SpellsDefine.Drill.IsReady() && !SpellsDefine.AirAnchor.IsReady() && !SpellsDefine.ChainSaw.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 30000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 2
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 500) return 2;
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 600) return 2;
         return -1;
     }
 

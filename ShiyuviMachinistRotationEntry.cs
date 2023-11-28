@@ -40,9 +40,10 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         new Machinist_SplitShot(),
         //new Machinist_GCD(),
         
+        new Machinist_HeadGraze(), //伤头
+        new Machinist_Hypercharge(), //超荷
         new Machinist_Wildfire(), //野火
         new Machinist_Reassemble(), //整备
-        new Machinist_Hypercharge(), //超荷
         new Machinist_BarrelStabilizer(), //加热
         new Machinist_RookAutoturret(), // robot
         new Machinist_Ricochet(), //弹射
@@ -77,6 +78,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddTab("DEV", _lazyOverlay.DrawDev);
         jobViewWindow.AddQt("自动减伤",true);
         jobViewWindow.AddQt("攒资源",false);
+        jobViewWindow.AddQt("自动打断",true);
         
         jobViewWindow.AddHotkey("LB", new HotKeyResolver_NormalSpell(24859, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("防击退", new HotKeyResolver_NormalSpell(7548, SpellTargetType.Self, false));

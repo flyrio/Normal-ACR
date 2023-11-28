@@ -44,8 +44,14 @@ public class MachinistOverlay
         }
 待补充*/
         
-        ImGui.Text($"测试中");
-
+        ImGui.Text($"基本测试完成，有问题反馈Rio布鲁");
+        ImGui.Text($"简易QA：");
+        ImGui.Text($"ACR适配等级2-90级");
+        ImGui.Text($"攒资源会暂停打除了123以外所有技能");
+        ImGui.Text($"水中无法放技能时速行会狂点，右键开启按钮临时关闭ACR");
+        ImGui.Text($"本ACR无起手设置，所有逻辑触发式运行，即：");
+        ImGui.Text($"1.关攒资源，用整备，钻头好了会打掉");
+        ImGui.Text($"2.关攒资源，开超荷，自动打热冲击，但不打野火、虹吸弹、弹射");
     }
     
     public void DrawTimeLine(JobViewWindow jobViewWindow)//时间轴全文照抄,后续调整改进

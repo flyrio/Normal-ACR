@@ -78,3 +78,15 @@ C:\Users\10576\Downloads\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.dll
 C:\Users\10576\Downloads\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\refint\Shiyuvi.dll
 C:\Users\10576\Downloads\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.pdb
 C:\Users\10576\Downloads\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\ref\Shiyuvi.dll
+F:\AE2.0-main\Normal-ACR-main\bin\Debug\net7.0\Shiyuvi.deps.json
+F:\AE2.0-main\Normal-ACR-main\bin\Debug\net7.0\Shiyuvi.dll
+F:\AE2.0-main\Normal-ACR-main\bin\Debug\net7.0\Shiyuvi.pdb
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.csproj.AssemblyReference.cache
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.GeneratedMSBuildEditorConfig.editorconfig
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.AssemblyInfoInputs.cache
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.AssemblyInfo.cs
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.csproj.CoreCompileInputs.cache
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.dll
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\refint\Shiyuvi.dll
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\Shiyuvi.pdb
+F:\AE2.0-main\Normal-ACR-main\obj\Debug\net7.0\ref\Shiyuvi.dll
