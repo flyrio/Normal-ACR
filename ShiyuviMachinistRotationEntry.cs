@@ -1,5 +1,6 @@
 ﻿using CombatRoutine;
 using CombatRoutine.View.JobView;
+using Common;
 using Common.Define;
 using Common.Language;
 using Shiyuvi.Machinist;
@@ -40,7 +41,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         new Machinist_SplitShot(),
         //new Machinist_GCD(),
         
-        new Machinist_HeadGraze(), //伤头
+
         new Machinist_Hypercharge(), //超荷
         new Machinist_Wildfire(), //野火
         new Machinist_Reassemble(), //整备
@@ -50,6 +51,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         new Machinist_GaussRound(), // 虹吸弹
         new Machinist_Tactician(), //策动
         new Machinist_Dismantle(), //武装解除
+        new Machinist_HeadGraze(), //伤头
     };
     
 
@@ -79,6 +81,10 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddQt("自动减伤",true);
         jobViewWindow.AddQt("攒资源",false);
         jobViewWindow.AddQt("自动打断",true);
+        jobViewWindow.AddQt("AOE",true);
+
+        
+
         
         jobViewWindow.AddHotkey("LB", new HotKeyResolver_NormalSpell(24859, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("防击退", new HotKeyResolver_NormalSpell(7548, SpellTargetType.Self, false));

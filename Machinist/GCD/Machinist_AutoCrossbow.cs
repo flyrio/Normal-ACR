@@ -15,6 +15,7 @@ public class Machinist_AutoCrossbow : ISlotResolver
         if (aoecount < 3) return -5;
         if (!SpellsDefine.AutoCrossbow.IsReady()) return -3;
         if (!Core.Get<IMemApiMCH>().OverHeated()) return -3;
+        if (!Qt.GetQt("AOE")) return -3;
         return 0;
     }
     

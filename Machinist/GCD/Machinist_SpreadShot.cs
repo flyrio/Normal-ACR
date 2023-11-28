@@ -20,6 +20,7 @@ public class Machinist_SpreadShot : ISlotResolver
         var aoecount = TargetHelper.GetEnemyCountInsideSector(Core.Me, Core.Me.GetCurrTarget(), 12, 90);
         if (aoecount < 3) return -5;
         if (!Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.SpreadShot.GetSpell().Id).GetSpell().IsReady()) return -3;
+        if (!Qt.GetQt("AOE")) return -3;
         return 0;
     }
 

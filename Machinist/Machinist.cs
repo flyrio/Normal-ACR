@@ -1,16 +1,19 @@
 ﻿using CombatRoutine;
+using CombatRoutine.TriggerModel;
 using CombatRoutine.View.JobView;
 using Common;
 using Common.GUI;
+using Common.Helper;
 using Common.Language;
 using ImGuiNET;
+using Trust;
 
 namespace Shiyuvi.Machinist;
 
 public class MachinistOverlay
 {
     private bool isHorizontal;
-    
+
     public void DrawGeneral(JobViewWindow jobViewWindow)
     {
 
@@ -38,22 +41,37 @@ public class MachinistOverlay
                 foreach (var spell in AI.Instance.BattleData.HighPrioritySlots_GCD)
                     ImGui.Text(spell.Name);
         }
-        
+
 /*        if (ImGui.CollapsingHeader("杂项"))
         {
         }
 待补充*/
+
+
+        if (ImGui.CollapsingHeader("说明书"))
+        {
+            ImGui.Text($"基本测试完成，有问题反馈Rio布鲁");
+            ImGui.Text($"简易QA：");
+            ImGui.Text($"ACR适配等级2-90级");
+            ImGui.Text($"攒资源会暂停打除了123以外所有技能");
+            ImGui.Text($"水中无法放技能时速行会狂点，右键开启按钮临时关闭ACR");
+            ImGui.Text($"本ACR无起手设置，所有逻辑触发式运行，即：");
+            ImGui.Text($"1.关攒资源，用整备，钻头好了会打掉");
+            ImGui.Text($"2.关攒资源，开超荷，自动打热冲击，但不打野火、虹吸弹、弹射");
+            ImGui.Text($"喷火器是BOSS上天时的玩具，平时请勿随便点击（会卡起手）");
+        }
+
         
-        ImGui.Text($"基本测试完成，有问题反馈Rio布鲁");
-        ImGui.Text($"简易QA：");
-        ImGui.Text($"ACR适配等级2-90级");
-        ImGui.Text($"攒资源会暂停打除了123以外所有技能");
-        ImGui.Text($"水中无法放技能时速行会狂点，右键开启按钮临时关闭ACR");
-        ImGui.Text($"本ACR无起手设置，所有逻辑触发式运行，即：");
-        ImGui.Text($"1.关攒资源，用整备，钻头好了会打掉");
-        ImGui.Text($"2.关攒资源，开超荷，自动打热冲击，但不打野火、虹吸弹、弹射");
+
+        ImGui.Checkbox("主动攻击", ref isHorizontal);
+        Share.Pull = isHorizontal;
+
+
+
+
     }
-    
+
+
     public void DrawTimeLine(JobViewWindow jobViewWindow)//时间轴全文照抄,后续调整改进
     {
         var currTriggerline = AI.Instance.TriggerlineData.CurrTriggerLine;
