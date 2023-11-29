@@ -1,4 +1,6 @@
-﻿using CombatRoutine;
+﻿using AEAssist.MemoryApi;
+using CombatRoutine;
+using CombatRoutine.Chat;
 using CombatRoutine.TriggerModel;
 using CombatRoutine.View.JobView;
 using Common;
@@ -13,6 +15,11 @@ namespace Shiyuvi.Machinist;
 public class MachinistOverlay
 {
     private bool isHorizontal;
+    private bool sigong;
+    private bool tiangong;
+    private bool youleika;
+    private bool zhudonggongji;
+    private bool message;
 
     public void DrawGeneral(JobViewWindow jobViewWindow)
     {
@@ -63,9 +70,38 @@ public class MachinistOverlay
 
         
 
-        ImGui.Checkbox("主动攻击", ref isHorizontal);
-        Share.Pull = isHorizontal;
+        ImGui.Checkbox("主动攻击", ref zhudonggongji);
+        if (zhudonggongji == true)
+            Share.Pull = zhudonggongji;
+        if (ImGui.CollapsingHeader("指定副本杀够怪自动停止攻击（开发中）,暂时无效"))
+        {
+            ImGui.Checkbox("死宫", ref sigong); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
+            if (sigong == true)
+            {
+                if (ChatManager.Instance.CurrGameLog == "提示下一层解锁的文本信息")
+                    Share.Pull = false;
+                if (ChatManager.Instance.CurrGameLog == "进入新一层的提示文本信息")
+                    Share.Pull = true;
+            }
+            ImGui.Checkbox("天宫", ref tiangong); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
+            if (tiangong == true)
+            {
+                if (Core.Get<IMemApiChatMessage>().Equals("提示下一层解锁的文本信息"))
+                    Share.Pull = false;
+                if (Core.Get<IMemApiChatMessage>().Equals("进入新一层的提示文本信息"))
+                    Share.Pull = true;
+            }
+            ImGui.Checkbox("优雷卡", ref youleika); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
+            if (youleika == true)
+            {
+                if (Core.Get<IMemApiChatMessage>().Equals("两只老虎"))
+                    Share.Pull = false;
+                if (Core.Get<IMemApiChatMessage>().Equals("进入新一层的提示文本信息"))
+                    Share.Pull = true;
+            }
+        }
 
+        
 
 
 
