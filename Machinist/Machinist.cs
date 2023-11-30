@@ -1,4 +1,5 @@
-﻿using AEAssist.MemoryApi;
+﻿using System.Text.RegularExpressions;
+using AEAssist.MemoryApi;
 using CombatRoutine;
 using CombatRoutine.Chat;
 using CombatRoutine.TriggerModel;
@@ -15,11 +16,7 @@ namespace Shiyuvi.Machinist;
 public class MachinistOverlay
 {
     private bool isHorizontal;
-    private bool sigong;
-    private bool tiangong;
-    private bool youleika;
-    private bool zhudonggongji;
-    private bool message;
+    private bool shencengmigong;
 
     public void DrawGeneral(JobViewWindow jobViewWindow)
     {
@@ -70,35 +67,22 @@ public class MachinistOverlay
 
         
 
-        ImGui.Checkbox("主动攻击", ref zhudonggongji);
-        if (zhudonggongji == true)
-            Share.Pull = zhudonggongji;
-        if (ImGui.CollapsingHeader("指定副本杀够怪自动停止攻击（开发中）,暂时无效"))
+        //ImGui.Checkbox("主动攻击", ref zhudonggongji);
+        //if (zhudonggongji == true) 
+        //    Share.Pull = zhudonggongji;
+        if (ImGui.CollapsingHeader("指定副本杀够怪自动停止攻击（开发中）"))
         {
-            ImGui.Checkbox("死宫", ref sigong); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
-            if (sigong == true)
+            ImGui.Checkbox("深层迷宫", ref shencengmigong); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
+            if (shencengmigong == true)
             {
-                if (ChatManager.Instance.CurrGameLog == "提示下一层解锁的文本信息")
+                if (Regex.Match(ChatManager.Instance.CurrGameLog,"下一层提示信息|下一层提示信息2|下一层提示信息3").Success)
                     Share.Pull = false;
-                if (ChatManager.Instance.CurrGameLog == "进入新一层的提示文本信息")
+                if (Regex.Match(ChatManager.Instance.CurrGameLog,"进入新一层的提示文本信息|进入新一层的提示文本信息2|进入新一层的提示文本信息3").Success)
                     Share.Pull = true;
             }
-            ImGui.Checkbox("天宫", ref tiangong); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
-            if (tiangong == true)
-            {
-                if (Core.Get<IMemApiChatMessage>().Equals("提示下一层解锁的文本信息"))
-                    Share.Pull = false;
-                if (Core.Get<IMemApiChatMessage>().Equals("进入新一层的提示文本信息"))
-                    Share.Pull = true;
-            }
-            ImGui.Checkbox("优雷卡", ref youleika); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
-            if (youleika == true)
-            {
-                if (Core.Get<IMemApiChatMessage>().Equals("两只老虎"))
-                    Share.Pull = false;
-                if (Core.Get<IMemApiChatMessage>().Equals("进入新一层的提示文本信息"))
-                    Share.Pull = true;
-            }
+
+            if (shencengmigong == false)
+                Share.Pull = false;
         }
 
         
@@ -160,6 +144,14 @@ public class MachinistOverlay
         {
             ImGui.Text($"热量：{Core.Get<IMemApiMCH>().GetHeat()}");
             ImGui.Text($"电量：{Core.Get<IMemApiMCH>().GetBattery()}");
+            ImGui.TreePop();
+        }
+
+        if (ImGui.TreeNode("文本信息"))
+        {
+            ImGui.Text($"文本内容:{ChatManager.Instance.CurrGameLog}");
+            ImGui.Text($"文本内容2:{ChatManager.Instance.CurrMsgType}");
+            ImGui.Text($"文本内容3:{Core.Get<IMemApiChatMessage>()}");
             ImGui.TreePop();
         }
     }
