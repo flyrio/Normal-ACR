@@ -16,7 +16,8 @@ namespace Shiyuvi.Machinist;
 public class MachinistOverlay
 {
     private bool isHorizontal;
-    private bool shencengmigong;
+    private bool zhudonggongji;
+    
 
     public void DrawGeneral(JobViewWindow jobViewWindow)
     {
@@ -54,7 +55,7 @@ public class MachinistOverlay
 
         if (ImGui.CollapsingHeader("说明书"))
         {
-            ImGui.Text($"基本测试完成，有问题反馈Rio布鲁");
+            ImGui.Text($"基本测试完成，有问题或建议都可反馈Rio布鲁");
             ImGui.Text($"简易QA：");
             ImGui.Text($"ACR适配等级2-90级");
             ImGui.Text($"攒资源会暂停打除了123以外所有技能");
@@ -62,7 +63,8 @@ public class MachinistOverlay
             ImGui.Text($"本ACR无起手设置，所有逻辑触发式运行，即：");
             ImGui.Text($"1.关攒资源，用整备，钻头好了会打掉");
             ImGui.Text($"2.关攒资源，开超荷，自动打热冲击，但不打野火、虹吸弹、弹射");
-            ImGui.Text($"喷火器是BOSS上天时的玩具，平时请勿随便点击（会卡起手）");
+            ImGui.Text($"自动速行推荐打开自动选择目标使用");
+            ImGui.Text($"脱战状态选中目标时，切换主动攻击开关会在下次战斗开始后生效");
         }
 
         
@@ -70,22 +72,10 @@ public class MachinistOverlay
         //ImGui.Checkbox("主动攻击", ref zhudonggongji);
         //if (zhudonggongji == true) 
         //    Share.Pull = zhudonggongji;
-        if (ImGui.CollapsingHeader("指定副本杀够怪自动停止攻击（开发中）"))
-        {
-            ImGui.Checkbox("深层迷宫", ref shencengmigong); //死宫，打开开关后，获取下一层门开了，自动关闭主动攻击，获取进入新一层，主动打开
-            if (shencengmigong == true)
-            {
-                if (Regex.Match(ChatManager.Instance.CurrGameLog,"下一层提示信息|下一层提示信息2|下一层提示信息3").Success)
-                    Share.Pull = false;
-                if (Regex.Match(ChatManager.Instance.CurrGameLog,"进入新一层的提示文本信息|进入新一层的提示文本信息2|进入新一层的提示文本信息3").Success)
-                    Share.Pull = true;
-            }
+        //if (zhudonggongji == false)
+        //    Share.Pull = zhudonggongji;
 
-            if (shencengmigong == false)
-                Share.Pull = false;
-        }
 
-        
 
 
 
@@ -146,14 +136,16 @@ public class MachinistOverlay
             ImGui.Text($"电量：{Core.Get<IMemApiMCH>().GetBattery()}");
             ImGui.TreePop();
         }
-
-        if (ImGui.TreeNode("文本信息"))
+        
+        if (ImGui.TreeNode("调试数据"))
         {
-            ImGui.Text($"文本内容:{ChatManager.Instance.CurrGameLog}");
-            ImGui.Text($"文本内容2:{ChatManager.Instance.CurrMsgType}");
-            ImGui.Text($"文本内容3:{Core.Get<IMemApiChatMessage>()}");
+            ImGui.Text($"MAPID：{Core.Get<IMemApiMap>().GetCurrTerrId()}");
+            ImGui.Text($"战斗时间：{AI.Instance.BattleData.CurrBattleTimeInMs}");
+            ImGui.Text($"主动攻击：{Share.Pull}");
             ImGui.TreePop();
         }
+
+
     }
     
 

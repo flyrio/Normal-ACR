@@ -22,6 +22,8 @@ public class Machinist_Drill : ISlotResolver
 
     public void Build(Slot slot)
     {
+        if (AI.Instance.BattleData.CurrBattleTimeInMs == 0 && !Qt.GetQt("攒资源") && SpellsDefine.Reassemble.IsReady() && !Core.Me.HasMyAura(851))
+            slot.Add(SpellsDefine.Reassemble.GetSpell());
         slot.Add(GetSpell());
     }
 }

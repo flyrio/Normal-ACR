@@ -1,4 +1,5 @@
 ﻿using CombatRoutine.View;
+using Common;
 using Common.GUI;
 using ImGuiNET;
 
@@ -11,6 +12,6 @@ public class MachinistSettingView : ISettingUI
 
     public void Draw()
     {
-        
+
     }
 }

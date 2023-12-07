@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using CombatRoutine.View.JobView;
+using Common;
 using Common.Helper;
 using Shiyuvi.Machinist;
 
@@ -38,8 +39,10 @@ public class MachinistSettings
         }
     }
 
+    
     public void save()
     {
+
         Directory.CreateDirectory(Path.GetDirectoryName(path));
         File.WriteAllText(path,JsonHelper.ToJson(this));
     }

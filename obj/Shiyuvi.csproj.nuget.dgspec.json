@@ -1,26 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "F:\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj": {}
+    "C:\\Users\\10576\\Downloads\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj": {}
   },
   "projects": {
-    "F:\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj": {
+    "C:\\Users\\10576\\Downloads\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj",
+        "projectUniqueName": "C:\\Users\\10576\\Downloads\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj",
         "projectName": "Shiyuvi",
-        "projectPath": "F:\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj",
-        "packagesPath": "C:\\Users\\yanweichun\\.nuget\\packages\\",
-        "outputPath": "F:\\AE2.0-main\\Normal-ACR-main\\obj\\",
+        "projectPath": "C:\\Users\\10576\\Downloads\\AE2.0-main\\Normal-ACR-main\\Shiyuvi.csproj",
+        "packagesPath": "C:\\Users\\10576\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\10576\\Downloads\\AE2.0-main\\Normal-ACR-main\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\yanweichun\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\10576\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {}
         },
         "frameworks": {
           "net7.0": {
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\yanweichun\\.dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }

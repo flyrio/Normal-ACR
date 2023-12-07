@@ -6,6 +6,7 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005C10576_005CDownloads_005CAE2_002E0_002Dmain_005CShiyuvi_005CScholar_005CReferences_005CCommon_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005C10576_005CDownloads_005CAE2_002E0_002Dmain_005CShiyuvi_005CScholar_005CReferences_005CImGui_002ENET_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=FE33B0EC_002DE9A9_002D4A81_002DB6A9_002D1311ABA3204F_002Fd_003AScholar_002Fd_003AGCD_002Ff_003AScholar_005FBaseGCD_002Ecs/@EntryIndexedValue">ExplicitlyExcluded</s:String>
+	
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\10576\Downloads\AE2.0-main\AEAssistCNVersion\AEAssist\CombatRoutine.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

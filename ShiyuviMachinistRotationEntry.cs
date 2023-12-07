@@ -19,7 +19,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
     
     public void DrawOverlay()
     {
-        
+
     }
     
     public string AuthorName { get; } = "Shiyuvi";
@@ -28,7 +28,10 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
     public AcrType AcrType { get; } = AcrType.Normal;
 
     public List<ISlotResolver> SlotResolvers = new() //排序
+
     {
+        
+        new Machinist_Hypercharge(), //超荷
         new Machinist_Bioblaster(), //毒菌
         new Machinist_Drill(), //钻头
         new Machinist_HotShot(), //空气矛
@@ -42,7 +45,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         //new Machinist_GCD(),
         
 
-        new Machinist_Hypercharge(), //超荷
+
         new Machinist_Wildfire(), //野火
         new Machinist_Reassemble(), //整备
         new Machinist_BarrelStabilizer(), //加热
@@ -78,10 +81,12 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddTab("通用", _lazyOverlay.DrawGeneral);
         jobViewWindow.AddTab("时间轴", _lazyOverlay.DrawTimeLine);
         jobViewWindow.AddTab("DEV", _lazyOverlay.DrawDev);
+        jobViewWindow.AddQt("主动攻击",false);
         jobViewWindow.AddQt("自动减伤",true);
         jobViewWindow.AddQt("攒资源",false);
         jobViewWindow.AddQt("自动打断",true);
         jobViewWindow.AddQt("AOE",true);
+        jobViewWindow.AddQt("自动速行",true);
 
         
 
@@ -91,7 +96,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("内丹", new HotKeyResolver_NormalSpell(7541, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("策动", new HotKeyResolver_NormalSpell(16889, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("扳手", new HotKeyResolver_NormalSpell(2887, SpellTargetType.Target, false));
-        jobViewWindow.AddHotkey("喷火器", new HotKeyResolver_NormalSpell(7418, SpellTargetType.Target, false));
+        jobViewWindow.AddHotkey("喷火器", new HotKeyResolver_NormalSpell(7418, SpellTargetType.Self, false));
         return true;
     }
 }
