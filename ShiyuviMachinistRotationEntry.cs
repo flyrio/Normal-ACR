@@ -87,7 +87,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddQt("自动打断",true);
         jobViewWindow.AddQt("AOE",true);
         jobViewWindow.AddQt("自动速行",true);
-
+        jobViewWindow.AddQt("回转飞锯",true);
         
 
         

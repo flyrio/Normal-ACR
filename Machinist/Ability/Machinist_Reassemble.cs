@@ -23,7 +23,7 @@ public class Machinist_Reassemble : ISlotResolver
             && (SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetGCDDuration() 
             && SpellsDefine.AirAnchor.GetSpell().Cooldown.TotalMilliseconds - (Core.Get<IMemApiSpell>().GetGCDDuration() - Core.Get<IMemApiSpell>().GetElapsedGCD()) < 0
             || SpellsDefine.AirAnchor.IsReady())) return 3;
-        if (!Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel == 90
+        if (!Qt.GetQt("攒资源") && Qt.GetQt("回转飞锯") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel == 90
             && (SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetGCDDuration() 
             && SpellsDefine.ChainSaw.GetSpell().Cooldown.TotalMilliseconds - (Core.Get<IMemApiSpell>().GetGCDDuration() - Core.Get<IMemApiSpell>().GetElapsedGCD()) < 0
             || SpellsDefine.ChainSaw.IsReady())) return 3;
