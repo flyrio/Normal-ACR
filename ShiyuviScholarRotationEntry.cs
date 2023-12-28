@@ -111,14 +111,20 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("做盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的护盾.png",
             () =>
             {
-                if (SpellsDefine.DeploymentTactics.IsReady() && (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)) && SpellsDefine.Swiftcast.IsReady())
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Recitation.GetSpell());//秘策
-                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Recitation.GetSpell());//毁坏
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Swiftcast.GetSpell());//即刻
+                if (SpellsDefine.DeploymentTactics.IsReady() &&
+                    (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)) && SpellsDefine.Swiftcast.IsReady())
+                {
+                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Recitation.GetSpell()); //秘策
+                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.SchRuin2.GetSpell()); //毁坏
+                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Swiftcast.GetSpell()); //即刻
                     if (SpellsDefine.Protraction.IsReady())
-                        AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Protraction.GetSpell());//回升
-                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Adloquium.GetSpell());//单盾
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.DeploymentTactics.GetSpell());//扩散
+                        AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Protraction
+                            .GetSpell()); //回升
+                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Adloquium.GetSpell()); //单盾
+                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.DeploymentTactics
+                        .GetSpell()); //扩散
+                }
+
                 if (!(SpellsDefine.DeploymentTactics.IsReady() && (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)) && SpellsDefine.Swiftcast.IsReady()))
                 {
                     AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
