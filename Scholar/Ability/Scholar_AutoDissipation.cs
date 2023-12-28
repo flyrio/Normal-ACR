@@ -19,9 +19,9 @@ public class Scholar_AutoDissipation : ISlotResolver
         if (!Core.Get<IMemApiScholar>().HasPet) return -3; //没宠物打不了
         if (SpellsDefine.WhisperingDawn.RecentlyUsed(3000) || SpellsDefine.FeyBlessing.RecentlyUsed(3000) ||
             SpellsDefine.FeyIllumination.RecentlyUsed(3000)) return -9; //防吞仙女技能
+        if (!Core.Get<IMemApiScholar>().HasPet) return -3;
         if (!Qt.GetQt("自动以太")) return 2;
         if (Qt.GetQt("自动以太") && Qt.GetQt("优先转化") && SpellsDefine.Aetherflow.IsReady()) return 3;
-        if (!Core.Get<IMemApiScholar>().HasPet) return -3;
         return 0;
     }
     
