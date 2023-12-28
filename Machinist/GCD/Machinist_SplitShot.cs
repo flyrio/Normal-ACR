@@ -12,13 +12,11 @@ public class Machinist_SplitShot : ISlotResolver
     public Spell GetSpell()
 
     {
-        switch (Core.Me.ClassLevel)
-        {
-            case >= 1 and < 54:
-                return SpellsDefine.SplitShot.GetSpell();
-            case >= 54:
-                return SpellsDefine.HeatedSplitShot.GetSpell();
-        }
+        if (Core.Me.ClassLevel < 26 && Core.Me.HasMyAura(851))
+            return SpellsDefine.SlugShot.GetSpell();
+        if (Core.Me.ClassLevel is >= 1 and < 54)
+            return SpellsDefine.SplitShot.GetSpell();
+        if (Core.Me.ClassLevel >= 54) return SpellsDefine.HeatedSplitShot.GetSpell();
 
         return null;
     }

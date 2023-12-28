@@ -12,16 +12,12 @@ public class Machinist_CleanShot : ISlotResolver
     public Spell GetSpell()
 
     {
-        switch (Core.Me.ClassLevel)
-        {
-            case < 26:
-                return SpellsDefine.SplitShot.GetSpell();
-            case >= 26 and < 64:
-                return SpellsDefine.CleanShot.GetSpell();
-            case >= 64:
-                return SpellsDefine.HeatedCleanShot.GetSpell();
-        }
-        
+        if (Core.Me.ClassLevel < 26)
+            return SpellsDefine.SplitShot.GetSpell();
+        if (Core.Me.ClassLevel is >= 26 and < 64)
+            return SpellsDefine.CleanShot.GetSpell();
+        if (Core.Me.ClassLevel >= 64) return SpellsDefine.HeatedCleanShot.GetSpell();
+        return null;
     }
     
     public int Check()

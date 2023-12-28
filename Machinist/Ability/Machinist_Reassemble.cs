@@ -11,6 +11,7 @@ public class Machinist_Reassemble : ISlotResolver
 
     public int Check()
     {
+        if (Core.Me.ClassLevel == 90 && SpellsDefine.AirAnchor.IsReady() && SpellsDefine.ChainSaw.IsReady() && Qt.GetQt("回转飞锯") && !SpellsDefine.Drill.IsReady()) return -3;
         if (!Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && !SpellsDefine.Reassemble.RecentlyUsed(2000) && SpellsDefine.Reassemble.IsReady() && Core.Me.ClassLevel >= 58
             && (SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds <= Core.Get<IMemApiSpell>().GetGCDDuration() 
             && SpellsDefine.Drill.GetSpell().Cooldown.TotalMilliseconds - (Core.Get<IMemApiSpell>().GetGCDDuration() - Core.Get<IMemApiSpell>().GetElapsedGCD()) < 0

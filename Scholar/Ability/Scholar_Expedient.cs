@@ -13,7 +13,7 @@ public class Scholar_Expedient : ISlotResolver
     {
         if (!Qt.GetQt("减伤")) return -3;
         if (!SpellsDefine.Expedient.IsReady()) return -3;
-        if (!TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),10)) return -5; //目标释放AOE
+        if (!(AOEHelper.TargerastingIsAOE(Core.Me.GetCurrTarget(),10) || TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),10))) return -5; //目标释放AOE
         //if (AI.Instance.GetGCDCooldown() < 600) return -7;
         return 0;
     }
