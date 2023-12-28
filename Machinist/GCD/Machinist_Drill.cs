@@ -22,9 +22,9 @@ public class Machinist_Drill : ISlotResolver
 
     public void Build(Slot slot)
     {
-        if (Core.Me.ClassLevel >= 84 && !Qt.GetQt("攒资源") && SpellsDefine.Reassemble.IsMaxChargeReady(2) && !Core.Me.HasMyAura(851)
-            ||
-            Core.Me.ClassLevel < 84 && !Qt.GetQt("攒资源") && SpellsDefine.Reassemble.IsReady() && !Core.Me.HasMyAura(851))
+        if (Core.Me.ClassLevel >= 84 && !Qt.GetQt("攒资源") && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Reassemble.GetSpell().Id) >= 1 && !Core.Me.HasMyAura(851))
+            slot.Add(SpellsDefine.Reassemble.GetSpell());
+        if (Core.Me.ClassLevel < 84 && !Qt.GetQt("攒资源") && SpellsDefine.Reassemble.IsReady() && !Core.Me.HasMyAura(851))
             slot.Add(SpellsDefine.Reassemble.GetSpell());
         slot.Add(GetSpell());
     }

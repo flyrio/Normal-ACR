@@ -52,7 +52,7 @@ public class Machinist_Hypercharge : ISlotResolver
             && !SpellsDefine.HotShot.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 20000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 1
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1200
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1000
             ||
             (Core.Get<IMemApiMCH>().GetHeat() == 100 && !Core.Me.HasMyAura(851) && !Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && SpellsDefine.Hypercharge.IsReady())) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 58 && Core.Me.ClassLevel < 74 && SpellsDefine.Hypercharge.IsReady()
@@ -61,7 +61,7 @@ public class Machinist_Hypercharge : ISlotResolver
             && !SpellsDefine.HotShot.IsReady() && !SpellsDefine.Drill.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 20000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 1
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1200
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1000
             ||
             (Core.Get<IMemApiMCH>().GetHeat() == 100 && !Core.Me.HasMyAura(851) && !Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && SpellsDefine.Hypercharge.IsReady())) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 74 && Core.Me.ClassLevel < 76 && SpellsDefine.Hypercharge.IsReady()
@@ -70,7 +70,7 @@ public class Machinist_Hypercharge : ISlotResolver
             && !SpellsDefine.HotShot.IsReady() && !SpellsDefine.Drill.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 20000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 2
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1200
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1000
             ||
             (Core.Get<IMemApiMCH>().GetHeat() == 100 && !Core.Me.HasMyAura(851) && !Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && SpellsDefine.Hypercharge.IsReady())) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel >= 76 && Core.Me.ClassLevel < 90 && SpellsDefine.Hypercharge.IsReady()
@@ -79,7 +79,7 @@ public class Machinist_Hypercharge : ISlotResolver
             && !SpellsDefine.Drill.IsReady() && !SpellsDefine.AirAnchor.IsReady()
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 20000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 2
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1200
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1000
             ||
             (Core.Get<IMemApiMCH>().GetHeat() == 100 && !Core.Me.HasMyAura(851) && !Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && SpellsDefine.Hypercharge.IsReady())) return 2;
         if (!Qt.GetQt("攒资源") && Core.Get<IMemApiMCH>().GetHeat() >= 50 && !Core.Get<IMemApiMCH>().OverHeated() && Core.Me.ClassLevel == 90 && SpellsDefine.Hypercharge.IsReady()
@@ -88,7 +88,7 @@ public class Machinist_Hypercharge : ISlotResolver
             && !SpellsDefine.Drill.IsReady() && !SpellsDefine.AirAnchor.IsReady() && (!SpellsDefine.ChainSaw.IsReady() || !Qt.GetQt("回转飞锯"))
             && (SpellsDefine.Wildfire.GetSpell().Cooldown.TotalMilliseconds >= 20000 || SpellsDefine.Wildfire.IsReady())
             && Core.Get<IMemApiSpell>().GetCharges(SpellsDefine.Ricochet.GetSpell().Id) < 2
-            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1200
+            && Core.Get<IMemApiSpell>().GetElapsedGCD() < 1000
             ||
             (Core.Get<IMemApiMCH>().GetHeat() == 100 && !Core.Me.HasMyAura(851) && !Qt.GetQt("攒资源") && !Core.Get<IMemApiMCH>().OverHeated() && SpellsDefine.Hypercharge.IsReady())) return 2;
         return -1;
