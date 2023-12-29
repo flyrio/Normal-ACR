@@ -143,9 +143,9 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
             () =>
             {
                 if (Qt.GetQt("罩子放脚下"))
-                   new HotKeyResolver_NormalSpell(SpellsDefine.SacredSoil.GetSpell().Id, SpellTargetType.Self, false);
-                if (!Qt.GetQt("罩子放脚下"))
-                   new HotKeyResolver_NormalSpell(SpellsDefine.SacredSoil.GetSpell().Id, SpellTargetType.Target, false);
+                   new Slot().Add(new Spell(SpellsDefine.Resurrection, SpellTargetType.Self));
+                if (!Qt.GetQt("罩子放脚下")) 
+                    new Slot().Add(new Spell(SpellsDefine.Resurrection, SpellTargetType.Target));
             }));
         jobViewWindow.AddHotkey("跑快快", new HotKeyResolver_NormalSpell(SpellsDefine.Expedient.GetSpell().Id, SpellTargetType.Self, false));
         return true;
