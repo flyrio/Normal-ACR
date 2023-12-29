@@ -105,6 +105,7 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         jobViewWindow.AddQt("康复", true);
         jobViewWindow.AddQt("拉人", true);
         jobViewWindow.AddQt("罩子放怪脚下", true);
+        jobViewWindow.AddQt("跑快快", true);
         
         jobViewWindow.AddHotkey("LB", new HotKeyResolver_NormalSpell(24859, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("防击退", new HotKeyResolver_NormalSpell(7559, SpellTargetType.Self, false));
@@ -137,6 +138,16 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
                     AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.EmergencyTactics.GetSpell());
                 AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
             }));
+        
+        jobViewWindow.AddHotkey("罩子", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/罩子.png",
+            () =>
+            {
+                if (Qt.GetQt("罩子放脚下"))
+                   new HotKeyResolver_NormalSpell(SpellsDefine.SacredSoil.GetSpell().Id, SpellTargetType.Self, false);
+                if (!Qt.GetQt("罩子放脚下"))
+                   new HotKeyResolver_NormalSpell(SpellsDefine.SacredSoil.GetSpell().Id, SpellTargetType.Target, false);
+            }));
+        jobViewWindow.AddHotkey("跑快快", new HotKeyResolver_NormalSpell(SpellsDefine.Expedient.GetSpell().Id, SpellTargetType.Self, false));
         return true;
     }
 }

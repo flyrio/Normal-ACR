@@ -24,7 +24,7 @@ public class Scholar_GetPet : ISlotResolver
             return -1;
         if (Core.Me.HasAura(791)) //有转化不叫
             return -3;
-        if (Core.Me.HasAura(418)) //有生还(刚复活的5秒无敌buff)不叫
+        if (SpellsDefine.Dissipation.RecentlyUsed(31000)) //转化后31秒不打
             return -4;
         if (!Qt.GetQt("自动召唤"))
             return -3;

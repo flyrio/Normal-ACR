@@ -18,7 +18,7 @@ public class Scholar_FeyIllumination : ISlotResolver
         //if (AI.Instance.GetGCDCooldown() < 600) return -7;
         if (!SpellsDefine.FeyIllumination.IsReady()) return -3;
         if (Core.Get<IMemApiScholar>().SeraphTimer() < 4000 & Core.Get<IMemApiScholar>().SeraphTimer() > 0) return -5;
-        if (SpellsDefine.Expedient.IsReady() && Core.Me.ClassLevel == 90) return -4;
+        if ((SpellsDefine.Expedient.IsReady() && Core.Me.ClassLevel == 90) || !Qt.GetQt("跑快快")) return -4;
         if (SpellsDefine.Expedient.RecentlyUsed(20000)) return -4;
         return 0;
     }

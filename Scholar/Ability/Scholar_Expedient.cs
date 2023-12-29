@@ -11,6 +11,7 @@ public class Scholar_Expedient : ISlotResolver
     //跑快快
     public int Check()
     {
+        if (!Qt.GetQt("跑快快")) return -3;
         if (!Qt.GetQt("减伤")) return -3;
         if (!SpellsDefine.Expedient.IsReady()) return -3;
         if (!(AOEHelper.TargerastingIsAOE(Core.Me.GetCurrTarget(),10) || TargetHelper.TargercastingIsbossaoe(Core.Me.GetCurrTarget(),10))) return -5; //目标释放AOE
