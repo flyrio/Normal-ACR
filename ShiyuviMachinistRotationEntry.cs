@@ -1,4 +1,5 @@
 ﻿using CombatRoutine;
+using CombatRoutine.Opener;
 using CombatRoutine.View.JobView;
 using Common;
 using Common.Define;
@@ -16,6 +17,13 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
     
     private readonly MachinistOverlay _lazyOverlay = new MachinistOverlay();
     public string OverlayTitle { get; } = "机工";
+    
+    private IOpener open = new Opener_MCH();
+    
+    private IOpener? GetOpener(uint level)//设置起手
+    {
+        return open;
+    }
     
     public void DrawOverlay()
     {
@@ -62,6 +70,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
     {
         MachinistSettings.Build(settingFolder);
         return new Rotation(this, ()=>SlotResolvers)
+            .AddOpener(GetOpener)
             .SetRotationEventHandler(new MachinistRotationEventHandler())
             .AddSettingUIs(new MachinistSettingView())
             .AddSlotSequences()
@@ -95,7 +104,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("内丹", new HotKeyResolver_NormalSpell(7541, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("策动", new HotKeyResolver_NormalSpell(16889, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("扳手", new HotKeyResolver_NormalSpell(2887, SpellTargetType.Target, false));
-        jobViewWindow.AddHotkey("喷火器", new HotKeyResolver_NormalSpell(7418, SpellTargetType.Self, false));
+        jobViewWindow.AddHotkey("超荷", new HotKeyResolver_NormalSpell(SpellsDefine.Hypercharge.GetSpell().Id, SpellTargetType.Target, false));
         return true;
     }
 }

@@ -4,6 +4,7 @@ using CombatRoutine.Opener;
 using CombatRoutine.View.JobView;
 using Common;
 using Common.Define;
+using Common.Helper;
 using Common.Language;
 using Shiyuvi.Scholar;
 using Shiyuvi.Scholar.Ability;
@@ -18,7 +19,15 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
     
     private readonly ScholarOverlay _lazyOverlay = new ScholarOverlay();
     public string OverlayTitle { get; } = "学者";
+
+    private IOpener open = new Opener_Scholar();
     
+    private IOpener? GetOpener(uint level)//设置起手
+    {
+        return open;
+    }
+
+
     public void DrawOverlay()
     {
         
@@ -68,6 +77,7 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
     {
         ScholarSettings.Build(settingFolder);
         return new Rotation(this, ()=>SlotResolvers)
+            .AddOpener(GetOpener)
             .SetRotationEventHandler(new ScholarRotationEventHandler())
             .AddSettingUIs(new ScholarSettingView())
             .AddSlotSequences()
@@ -83,13 +93,15 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         jobViewWindow = new JobViewWindow(ScholarSettings.Instance.JobViewSave, ScholarSettings.Instance.save,
             OverlayTitle); // 这里设置一个静态变量.方便其他地方用
         JobViewWindow = jobViewWindow;
-        jobViewWindow.AddTab("通用", _lazyOverlay.DrawGeneral);
+        jobViewWindow.AddTab("控制台", _lazyOverlay.DrawControl);
+        jobViewWindow.AddTab("说明书", _lazyOverlay.DrawGeneral);
         jobViewWindow.AddTab("时间轴", _lazyOverlay.DrawTimeLine);
         jobViewWindow.AddTab("DEV", _lazyOverlay.DrawDev);
+
+        jobViewWindow.AddQt("爆发药",false);
         jobViewWindow.AddQt("AOE",true);
         jobViewWindow.AddQt("DOT", true);
         jobViewWindow.AddQt("连环计", true);
-        jobViewWindow.AddQt("移动输出", true);
         
         jobViewWindow.AddQt("GCD治疗", true);
         jobViewWindow.AddQt("能力治疗", true);
@@ -107,17 +119,22 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         jobViewWindow.AddQt("罩子放怪脚下", true);
         jobViewWindow.AddQt("跑快快", true);
         
+        jobViewWindow.AddQt("秘策", true);
+        jobViewWindow.AddQt("豆子单奶", true);
+        jobViewWindow.AddQt("豆子群奶", true);
+        
         jobViewWindow.AddHotkey("LB", new HotKeyResolver_NormalSpell(24859, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("防击退", new HotKeyResolver_NormalSpell(7559, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("做盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的护盾.png",
             () =>
             {
                 if (SpellsDefine.DeploymentTactics.IsReady() &&
-                    (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)) && SpellsDefine.Swiftcast.IsReady())
+                    (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)))
                 {
                     AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Recitation.GetSpell()); //秘策
                     AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.SchRuin2.GetSpell()); //毁坏
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Swiftcast.GetSpell()); //即刻
+                    if (SpellsDefine.Swiftcast.IsReady())
+                        AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Swiftcast.GetSpell()); //即刻
                     if (SpellsDefine.Protraction.IsReady())
                         AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Protraction
                             .GetSpell()); //回升
@@ -142,12 +159,24 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("罩子", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/罩子.png",
             () =>
             {
-                if (Qt.GetQt("罩子放脚下"))
-                   new Slot().Add(new Spell(SpellsDefine.Resurrection, SpellTargetType.Self));
-                if (!Qt.GetQt("罩子放脚下")) 
-                    new Slot().Add(new Spell(SpellsDefine.Resurrection, SpellTargetType.Target));
+                if (!Qt.GetQt("罩子放怪脚下") && SpellsDefine.SacredSoil.IsReady() && !AI.Instance.BattleData.HighPrioritySlots_OffGCD.Contains(SpellsDefine.SacredSoil.GetSpell())) 
+                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(new Spell(SpellsDefine.SacredSoil.GetSpell().Id,SpellTargetType.Self));
+                if (Qt.GetQt("罩子放怪脚下") && SpellsDefine.SacredSoil.IsReady() && !AI.Instance.BattleData.HighPrioritySlots_OffGCD.Contains(SpellsDefine.SacredSoil.GetSpell())) 
+                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(new Spell(SpellsDefine.SacredSoil.GetSpell().Id,SpellTargetType.Target));
             }));
         jobViewWindow.AddHotkey("跑快快", new HotKeyResolver_NormalSpell(SpellsDefine.Expedient.GetSpell().Id, SpellTargetType.Self, false));
+        List<uint> Dead = new List<uint>
+        {
+            409,
+            811
+        };
+        var HealTarget =PartyHelper.CastableAlliesWithin30
+            .Where(r => r.CurrentHealth > 0 &&
+                        !r.HasAnyAura(Dead, 3000))
+            .OrderBy(r => r.CurrentHealthPercent)
+            .FirstOrDefault();
+        //jobViewWindow.AddHotkey("单盾", new HotKeyResolver_NormalSpell(185, SpellTargetType.DynamicTarget, false));
+        jobViewWindow.AddHotkey("群盾", new HotKeyResolver_NormalSpell(186, SpellTargetType.Self, false));
         return true;
     }
 }
