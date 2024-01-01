@@ -11,6 +11,7 @@ public class Scholar_Excogitation : ISlotResolver
     //绿帽
     public int Check()
     {
+        if (!Qt.GetQt("豆子单奶")) return -3;
         List<uint> Dead = new List<uint>
         {
             409,

@@ -25,7 +25,10 @@ public class MachinistRotationEventHandler : IRotationEventHandler
         if (!Qt.GetQt("主动攻击"))
             Share.Pull = false;
         var slot = new Slot();
-        if ((SpellsDefine.Peloton.IsReady() || (Core.Get<IMemApiMap>().GetCurrTerrId() == 561 && !SpellsDefine.Peloton.RecentlyUsed())) && !Core.Me.HasAura(1199) && Core.Get<IMemApiMove>().IsMoving() && !Core.Get<IMemApiCondition>().IsInCombat() && Core.Me.HitboxRadius() == 0.5 && Qt.GetQt("自动速行"))
+        if ((SpellsDefine.Peloton.IsReady() || ((Core.Get<IMemApiMap>().GetCurrTerrId() == 561 || Core.Get<IMemApiMap>().GetCurrTerrId() == 562
+                || Core.Get<IMemApiMap>().GetCurrTerrId() == 563
+                || Core.Get<IMemApiMap>().GetCurrTerrId() == 564
+                || Core.Get<IMemApiMap>().GetCurrTerrId() == 565) && !SpellsDefine.Peloton.RecentlyUsed())) && !Core.Me.HasAura(1199) && Core.Get<IMemApiMove>().IsMoving() && !Core.Get<IMemApiCondition>().IsInCombat() && Core.Me.HitboxRadius() == 0.5 && Qt.GetQt("自动速行"))
         {
             slot.Add(SpellsDefine.Peloton.GetSpell());
         }

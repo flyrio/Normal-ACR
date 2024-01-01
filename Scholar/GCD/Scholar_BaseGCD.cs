@@ -15,6 +15,7 @@ public class Scholar_BaseGCD : ISlotResolver
     
     public int Check()
     {
+        if (!(SpellsDefine.LucidDreaming.IsReady() || Core.Me.HasMyAura(1204)) && Core.Me.CurrentMana < 1000 && (Core.Me.HasAura(43) || Core.Me.HasAura(44))) return -1;
         if (Core.Get<IMemApiMove>().IsMoving() && !Core.Me.HasAura(AurasDefine.Swiftcast)) return -2;
         return 0;
     }

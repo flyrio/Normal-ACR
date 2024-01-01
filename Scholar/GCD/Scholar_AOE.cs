@@ -15,6 +15,7 @@ public class Scholar_AOE : ISlotResolver
     
     public int Check()
     {
+        if (!(SpellsDefine.LucidDreaming.IsReady() || Core.Me.HasMyAura(1204)) && Core.Me.CurrentMana < 1000 && (Core.Me.HasAura(43) || Core.Me.HasAura(44))) return -1;
         if (Core.Me.ClassLevel < 46) return -3;
         var aoeCount = TargetHelper.GetNearbyEnemyCount(Core.Me, 5, 5);
         if (aoeCount < 2) return -2;

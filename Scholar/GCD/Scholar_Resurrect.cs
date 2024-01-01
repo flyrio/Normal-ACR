@@ -9,7 +9,15 @@ public class Scholar_Resurrect : ISlotResolver
     public SlotMode SlotMode { get; } = SlotMode.Gcd;
 
     public int Check()
-    {   //即刻没转好不拉
+    {   
+        //特定副本不拉人
+        if (Core.Get<IMemApiMap>().GetCurrTerrId() == 1069) return -1;
+        if (Core.Get<IMemApiMap>().GetCurrTerrId() == 1075) return -1;
+        if (Core.Get<IMemApiMap>().GetCurrTerrId() == 1076) return -1;
+        if (Core.Get<IMemApiMap>().GetCurrTerrId() == 1055) return -1;
+        if (Core.Get<IMemApiMap>().GetCurrTerrId() == 1056) return -1;
+        if (Core.Get<IMemApiMap>().GetCurrTerrId() == 1037) return -1;
+        //即刻没转好不拉
         if (!SpellsDefine.Swiftcast.IsReady()) return -3;
         //拉人QT没开不拉
         if (!Qt.GetQt("拉人")) return -3;

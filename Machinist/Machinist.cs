@@ -5,6 +5,7 @@ using CombatRoutine.Chat;
 using CombatRoutine.TriggerModel;
 using CombatRoutine.View.JobView;
 using Common;
+using Common.Define;
 using Common.GUI;
 using Common.Helper;
 using Common.Language;
@@ -142,6 +143,7 @@ public class MachinistOverlay
             ImGui.Text($"MAPID：{Core.Get<IMemApiMap>().GetCurrTerrId()}");
             ImGui.Text($"战斗时间：{AI.Instance.BattleData.CurrBattleTimeInMs}");
             ImGui.Text($"主动攻击：{Share.Pull}");
+            ImGui.Text($"多变复活层数:{Core.Get<IMemApiSpell>().GetCharges(29734)}");
             ImGui.TreePop();
         }
 

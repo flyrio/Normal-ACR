@@ -54,6 +54,7 @@ public class ScholarSettings
     public int time = 1500;
     public int stack = 3;
 
+    public string Start = "无起手";
     public void save()
     {
         Directory.CreateDirectory(Path.GetDirectoryName(path));

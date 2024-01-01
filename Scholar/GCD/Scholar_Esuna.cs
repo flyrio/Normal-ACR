@@ -26,6 +26,6 @@ public class Scholar_Esuna : ISlotResolver
     public void Build(Slot slot)
     {
         slot.Add(new Spell(SpellsDefine.Esuna,
-            PartyHelper.CastableAlliesWithin30.FirstOrDefault(agent => agent.HasCanDispel())));
+            PartyHelper.CastableAlliesWithin30.LastOrDefault(agent => agent.HasCanDispel())));
     }
 }

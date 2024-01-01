@@ -11,6 +11,7 @@ public class Scholar_Recitation : ISlotResolver
     
     public int Check()
     {
+        if (!Qt.GetQt("秘策")) return -1;
         List<uint> Dead = new List<uint>
         {
             409,
