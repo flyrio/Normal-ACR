@@ -155,15 +155,15 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
                     AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.EmergencyTactics.GetSpell());
                 AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
             }));
-        
-        jobViewWindow.AddHotkey("罩子", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/罩子.png",
-            () =>
-            {
-                if (!Qt.GetQt("罩子放怪脚下") && SpellsDefine.SacredSoil.IsReady() && !AI.Instance.BattleData.HighPrioritySlots_OffGCD.Contains(SpellsDefine.SacredSoil.GetSpell())) 
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(new Spell(SpellsDefine.SacredSoil.GetSpell().Id,SpellTargetType.Self));
-                if (Qt.GetQt("罩子放怪脚下") && SpellsDefine.SacredSoil.IsReady() && !AI.Instance.BattleData.HighPrioritySlots_OffGCD.Contains(SpellsDefine.SacredSoil.GetSpell())) 
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(new Spell(SpellsDefine.SacredSoil.GetSpell().Id,SpellTargetType.Target));
-            }));
+        jobViewWindow.AddHotkey("罩子", new Scholar_Shield.Shield(188));
+        //jobViewWindow.AddHotkey("罩子", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/罩子.png",
+        //    () =>
+         //   {
+         //       if (!Qt.GetQt("罩子放怪脚下") && SpellsDefine.SacredSoil.IsReady() && !AI.Instance.BattleData.HighPrioritySlots_OffGCD.Contains(SpellsDefine.SacredSoil.GetSpell())) 
+          //          AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(new Spell(SpellsDefine.SacredSoil.GetSpell().Id,SpellTargetType.Self));
+          //      if (Qt.GetQt("罩子放怪脚下") && SpellsDefine.SacredSoil.IsReady() && !AI.Instance.BattleData.HighPrioritySlots_OffGCD.Contains(SpellsDefine.SacredSoil.GetSpell())) 
+          //          AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(new Spell(SpellsDefine.SacredSoil.GetSpell().Id,SpellTargetType.Target));
+          //  }));
         jobViewWindow.AddHotkey("跑快快", new HotKeyResolver_NormalSpell(SpellsDefine.Expedient.GetSpell().Id, SpellTargetType.Self, false));
         List<uint> Dead = new List<uint>
         {

@@ -5,8 +5,68 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005C10576_005CDownloads_005CAE2_002E0_002Dmain_005CShiyuvi_005CScholar_005CReferences_005CCombatRoutine_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005C10576_005CDownloads_005CAE2_002E0_002Dmain_005CShiyuvi_005CScholar_005CReferences_005CCommon_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005C10576_005CDownloads_005CAE2_002E0_002Dmain_005CShiyuvi_005CScholar_005CReferences_005CImGui_002ENET_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Clib_005CFFXIVClientStructs_005Cbin_005CDebug_005CFFXIVClientStructs_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005C_002Eeditorconfig/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005C_002Egitattributes/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005C_002Egitignore/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005C_002Egitmodules/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cbuild_002Ecmd/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cbuild_002Eps1/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cbuild_002Esh/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005CCreateHashList_002Eps1/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005CDalamud_002Esln_002EDotSettings/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005CDalamud_002Esln/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cdocfx_002Ejson/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005CfilterConfig_002Eyml/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cglobal_002Ejson/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cindex_002Emd/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005CLICENSE/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005CREADME_002Emd/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Csign_002Eps1/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CDalamud_002D7_002E11_002E0_002E0_005Cstylecop_002Ejson/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CImGuiScene_002Dmaster_005CImGuiScene_005Cbin_005CDebug_005Cnetstandard2_002E0_005CImGuiScene_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=C_003A_005CUsers_005Cyanweichun_005CDesktop_005CImGuiScene_002Dmaster_005CImGuiScene_005Cbin_005CDebug_005Cnetstandard2_002E0_005CSDL2_002DCS_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CAEAssist_002Edeps_002Ejson/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CAEAssist_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CAEAssist_002Epdb/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CAutofac_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CBasic_002EReference_002EAssemblies_002ENet70_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CChangeLog_002Etxt/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CCombatRoutine_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CCombatRoutine_002Epdb/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CCommon_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CCommon_002Exml/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CECommons_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CFastDeepCloner_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CImGui_002ENET_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CMemoryPack_002ECore_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CMicrosoft_002ECodeAnalysis_002ECSharp_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CMicrosoft_002ECodeAnalysis_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002EAsio_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002ECore_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002EMidi_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002EWasapi_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002EWinForms_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNAudio_002EWinMM_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CNewtonsoft_002EJson_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005COrderBot_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005COrderBot_002Epdb/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CRecastDll_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CRecastNet_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CSystem_002ECodeDom_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CSystem_002EManagement_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CSystem_002EWindows_002EForms_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CTomlet_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CTriggerlineEditor_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CAEAssistCNVersion_005CAEAssist_005CTriggerlineEditor_002Epdb/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CNormal_002DACR_002Dmain_005CImGuiScene_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=F_003A_005CAE2_002E0_002Dmain_005CNormal_002DACR_002Dmain_005CSDL2_002DCS_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=FE33B0EC_002DE9A9_002D4A81_002DB6A9_002D1311ABA3204F_002Fd_003AScholar_002Fd_003AGCD_002Ff_003AScholar_005FBaseGCD_002Ecs/@EntryIndexedValue">ExplicitlyExcluded</s:String>
 	
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="C:\Users\10576\Downloads\AE2.0-main\AEAssistCNVersion\AEAssist\CombatRoutine.dll" /&gt;&#xD;
+  &lt;Assembly Path="F:\AE2.0-main\AEAssistCNVersion\AEAssist\AEAssist.dll" /&gt;&#xD;
+  &lt;Assembly Path="F:\AE2.0-main\AEAssistCNVersion\AEAssist\ECommons.dll" /&gt;&#xD;
+  &lt;Assembly Path="F:\AE2.0-main\AEAssistCNVersion\AEAssist\OrderBot.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
