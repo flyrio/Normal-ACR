@@ -177,6 +177,7 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
             .FirstOrDefault();
         //jobViewWindow.AddHotkey("单盾", new HotKeyResolver_NormalSpell(185, SpellTargetType.DynamicTarget, false));
         jobViewWindow.AddHotkey("群盾", new HotKeyResolver_NormalSpell(186, SpellTargetType.Self, false));
+        jobViewWindow.AddHotkey("营救天边的你",new Rescue.RescueTarget(7571));
         return true;
     }
 }
