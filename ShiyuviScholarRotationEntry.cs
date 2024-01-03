@@ -125,36 +125,38 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         
         jobViewWindow.AddHotkey("LB", new HotKeyResolver_NormalSpell(24859, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("防击退", new HotKeyResolver_NormalSpell(7559, SpellTargetType.Self, false));
-        jobViewWindow.AddHotkey("做盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的护盾.png",
-            () =>
-            {
-                if (SpellsDefine.DeploymentTactics.IsReady() &&
-                    (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)))
-                {
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Recitation.GetSpell()); //秘策
-                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.SchRuin2.GetSpell()); //毁坏
-                    if (SpellsDefine.Swiftcast.IsReady())
-                        AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Swiftcast.GetSpell()); //即刻
-                    if (SpellsDefine.Protraction.IsReady())
-                        AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Protraction
-                            .GetSpell()); //回升
-                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Adloquium.GetSpell()); //单盾
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.DeploymentTactics
-                        .GetSpell()); //扩散
-                }
-
-                if (!(SpellsDefine.DeploymentTactics.IsReady() && (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)) && SpellsDefine.Swiftcast.IsReady()))
-                {
-                    AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
-                }
-            }));
-        jobViewWindow.AddHotkey("应急群盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的抬血.png",
-            () =>
-            {
-                if (SpellsDefine.EmergencyTactics.IsReady())
-                    AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.EmergencyTactics.GetSpell());
-                AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
-            }));
+        jobViewWindow.AddHotkey("做盾",new Scholar_DeploymentTactics.DeploymentTactics(3585));
+        //jobViewWindow.AddHotkey("做盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的护盾.png",
+        //    () =>
+        //    {
+        //        if (SpellsDefine.DeploymentTactics.IsReady() &&
+        //            (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)))
+        //        {
+        //            AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Recitation.GetSpell()); //秘策
+        //            AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.SchRuin2.GetSpell()); //毁坏
+        //            if (SpellsDefine.Swiftcast.IsReady())
+        //                AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Swiftcast.GetSpell()); //即刻
+        //            if (SpellsDefine.Protraction.IsReady())
+        //               AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.Protraction
+        //                    .GetSpell()); //回升
+        //            AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Adloquium.GetSpell()); //单盾
+         //           AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.DeploymentTactics
+         //               .GetSpell()); //扩散
+         //       }
+//
+         //       if (!(SpellsDefine.DeploymentTactics.IsReady() && (SpellsDefine.Recitation.IsReady() || Core.Me.HasAura(1896)) && SpellsDefine.Swiftcast.IsReady()))
+         //       {
+         //           AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
+         //       }
+         //   }));
+        //jobViewWindow.AddHotkey("应急群盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的抬血.png",
+        //    () =>
+        //    {
+         //       if (SpellsDefine.EmergencyTactics.IsReady())
+         //           AI.Instance.BattleData.HighPrioritySlots_OffGCD.Enqueue(SpellsDefine.EmergencyTactics.GetSpell());
+         //       AI.Instance.BattleData.HighPrioritySlots_GCD.Enqueue(SpellsDefine.Succor.GetSpell());//群盾
+        //    }));
+        jobViewWindow.AddHotkey("应急盾", new Scholar_Succor.Succor(3586));
         jobViewWindow.AddHotkey("罩子", new Scholar_Shield.Shield(188));
         //jobViewWindow.AddHotkey("罩子", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/罩子.png",
         //    () =>

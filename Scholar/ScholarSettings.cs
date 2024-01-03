@@ -1,4 +1,6 @@
+using System.ComponentModel;
 using System.Numerics;
+using CombatRoutine.Setting;
 using CombatRoutine.View.JobView;
 using Common.Helper;
 
@@ -60,6 +62,8 @@ public class ScholarSettings
         Directory.CreateDirectory(Path.GetDirectoryName(path));
         File.WriteAllText(path,JsonHelper.ToJson(this));
     }
+
+
 
 
 }

@@ -125,6 +125,7 @@ public class ScholarOverlay
             ImGui.Text($"上个GCD：{Core.Get<IMemApiSpellCastSucces>().LastGcd}");
             ImGui.Text($"上个能力技：{Core.Get<IMemApiSpellCastSucces>().LastAbility}");
             ImGui.Text($"多变复活层数:{Core.Get<IMemApiSpell>().GetCharges(29734)}");
+            ImGui.Text($"QT状态:{AI.Instance.BattleData.NextSlot}");
             ImGui.TreePop();
         }
 

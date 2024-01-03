@@ -3,6 +3,7 @@
 using System.ComponentModel.Design;
 using System.Diagnostics;
 using CombatRoutine;
+using CombatRoutine.Setting;
 using Common;
 using Common.Define;
 
@@ -87,5 +88,25 @@ public class ScholarRotationEventHandler : IRotationEventHandler
     public Task OnPreCombat()//战前准备
     {
         return Task.CompletedTask;
+    }
+    
+    public static int CastingSpellSuccessRemainTimingSlideTp;
+    public static int CastingSpellSuccessRemainTiming;
+    
+    public void OnExitRotation()
+    {
+
+        SettingMgr.GetSetting<GeneralSettings>().CastingSpellSuccessRemainTimingSlideTp = CastingSpellSuccessRemainTimingSlideTp;
+        SettingMgr.GetSetting<GeneralSettings>().CastingSpellSuccessRemainTiming = CastingSpellSuccessRemainTiming;
+
+    }
+    
+    public void OnEnterRotation()
+    {
+        CastingSpellSuccessRemainTimingSlideTp = SettingMgr.GetSetting<GeneralSettings>().CastingSpellSuccessRemainTimingSlideTp;
+        CastingSpellSuccessRemainTiming =
+        SettingMgr.GetSetting<GeneralSettings>().CastingSpellSuccessRemainTiming;
+        SettingMgr.GetSetting<GeneralSettings>().CastingSpellSuccessRemainTimingSlideTp = 470;
+        SettingMgr.GetSetting<GeneralSettings>().CastingSpellSuccessRemainTiming = 470;
     }
 }

@@ -4,6 +4,7 @@ using CombatRoutine.View.JobView;
 using Common;
 using Common.Define;
 using Common.Helper;
+using ECommons;
 using ImGuiNET;
 using ImGuiScene;
 using Shiyuvi.Scholar;
@@ -16,7 +17,7 @@ public class Rescue
     {
         var RescueTarget =PartyHelper.CastableAlliesWithin30
             .Where(r => r.CurrentHealth > 0 && !r.HasAura(2663) && !r.HasAura(7559) && !r.HasAura(7548))
-            .OrderBy(r => r.Pos)
+            .OrderBy(r => r.Distance(PartyHelper.CastableAlliesWithin30.FirstOrDefault()))
             .LastOrDefault();
         return RescueTarget;
     }
@@ -47,9 +48,13 @@ public class Rescue
 
         public void Run()
         {
-            if (AI.Instance.BattleData.NextSlot == null)
-                AI.Instance.BattleData.NextSlot = new Slot();
-            AI.Instance.BattleData.NextSlot.Add(new Spell(7571,GetRescueTarget));
+            if (AI.Instance.BattleData.BattleStartTime > 0)
+            {
+                if (AI.Instance.BattleData.NextSlot == null)
+                    AI.Instance.BattleData.NextSlot = new Slot();
+                AI.Instance.BattleData.NextSlot.Add(new Spell(7571,GetRescueTarget));    
+            }
+            
         }
     }
 }
