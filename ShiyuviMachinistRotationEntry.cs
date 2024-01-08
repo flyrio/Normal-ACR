@@ -52,6 +52,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         new Machinist_SplitShot(),
         //new Machinist_GCD(),
         
+        
         new Machinist_Wildfire(), //野火
         new Machinist_Tactician(), //策动
         new Machinist_Dismantle(), //武装解除
@@ -105,6 +106,7 @@ public class ShiyuviMachinistRotationEntry : IRotationEntry
         jobViewWindow.AddHotkey("策动", new HotKeyResolver_NormalSpell(16889, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("扳手", new HotKeyResolver_NormalSpell(2887, SpellTargetType.Target, false));
         jobViewWindow.AddHotkey("超荷", new HotKeyResolver_NormalSpell(SpellsDefine.Hypercharge.GetSpell().Id, SpellTargetType.Target, false));
+        jobViewWindow.AddHotkey("尼给路哒哟", new Sprint.TheSprint(29057));
         return true;
     }
 }

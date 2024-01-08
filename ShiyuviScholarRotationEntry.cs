@@ -51,10 +51,6 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         new Scholar_BaseGCD(),
         
         new Scholar_ChainStrategem(),//连环计
-        new Scholar_LucidDreaming(),//醒梦
-        new Scholar_DissolveUnion(),//截断链子
-        new Scholar_AutoAetherflow(),//以太
-        new Scholar_AutoDissipation(),//转化
         new Scholar_Consolation(),//慰藉
         new Scholar_FeyIllumination(),//幻光
         new Scholar_Expedient(),//跑快快
@@ -67,8 +63,12 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         new Scholar_Excogitation(),//绿帽
         new Scholar_Lustrate(),//活性法
         new Scholar_Protraction(),//回升法
+        new Scholar_DissolveUnion(),//截断链子
+        new Scholar_AutoAetherflow(),//以太
+        new Scholar_AutoDissipation(),//转化
         new Scholar_EnergyDrain2(),//豆子
         new Scholar_Aetherpact(),//链子
+        new Scholar_LucidDreaming(),//醒梦
     };
     
 
@@ -123,8 +123,10 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         jobViewWindow.AddQt("豆子单奶", true);
         jobViewWindow.AddQt("豆子群奶", true);
         
+        
         jobViewWindow.AddHotkey("LB", new HotKeyResolver_NormalSpell(24859, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("防击退", new HotKeyResolver_NormalSpell(7559, SpellTargetType.Self, false));
+        jobViewWindow.AddHotkey("尼给路哒哟", new Sprint.TheSprint(29057));
         jobViewWindow.AddHotkey("做盾",new Scholar_DeploymentTactics.DeploymentTactics(3585));
         //jobViewWindow.AddHotkey("做盾", new HotkeyResolver_General("../../RotationPlugin/Shiyuvi/Resources/牛逼的护盾.png",
         //    () =>
@@ -180,6 +182,7 @@ public class ShiyuviScholarRotationEntry : IRotationEntry
         //jobViewWindow.AddHotkey("单盾", new HotKeyResolver_NormalSpell(185, SpellTargetType.DynamicTarget, false));
         jobViewWindow.AddHotkey("群盾", new HotKeyResolver_NormalSpell(186, SpellTargetType.Self, false));
         jobViewWindow.AddHotkey("营救天边的你",new Rescue.RescueTarget(7571));
+        
         return true;
     }
 }
