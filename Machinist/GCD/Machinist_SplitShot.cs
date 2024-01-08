@@ -12,6 +12,7 @@ public class Machinist_SplitShot : ISlotResolver
     public Spell GetSpell()
 
     {
+        
         if (Core.Me.ClassLevel == 1) return SpellsDefine.SplitShot.GetSpell();
         if (Core.Me.ClassLevel < 26 && Core.Me.HasMyAura(851))
             return SpellsDefine.SlugShot.GetSpell();
@@ -24,6 +25,7 @@ public class Machinist_SplitShot : ISlotResolver
     
     public int Check()
     {
+        if (Core.Get<IMemApiSpell>().GetActionInRangeOrLoS(SpellsDefine.SplitShot) == 566) return -1;
         return 0;
     }
 

@@ -52,7 +52,8 @@ public class Scholar_DeploymentTactics
                     AI.Instance.BattleData.NextSlot.Add(new Spell(SpellsDefine.Adloquium.GetSpell().Id,DeploymentTacticsTarget));//单盾
                 else
                 {
-                    AI.Instance.BattleData.NextSlot.Add(new Spell(SpellsDefine.SchRuin2.GetSpell().Id,SpellTargetType.Target)); //毁坏
+                    if (Core.Me.GetCurrTarget().CanAttack)
+                        AI.Instance.BattleData.NextSlot.Add(new Spell(SpellsDefine.SchRuin2.GetSpell().Id,SpellTargetType.Target)); //毁坏
                     if (SpellsDefine.Swiftcast.IsReady())
                         AI.Instance.BattleData.NextSlot.Add(new Spell(SpellsDefine.Swiftcast.GetSpell().Id,DeploymentTacticsTarget())); //即刻
                     if (SpellsDefine.Protraction.IsReady())

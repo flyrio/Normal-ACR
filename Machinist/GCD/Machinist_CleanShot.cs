@@ -22,6 +22,7 @@ public class Machinist_CleanShot : ISlotResolver
     
     public int Check()
     {
+        if (Core.Get<IMemApiSpell>().GetActionInRangeOrLoS(SpellsDefine.CleanShot) == 566) return -1;
         if (Core.Get<IMemApiSpell>().GetLastComboSpellId() ==
             SpellsDefine.SlugShot.GetSpell().Id)
             return 2; //2-3

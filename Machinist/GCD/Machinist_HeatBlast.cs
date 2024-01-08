@@ -15,6 +15,7 @@ public class Machinist_HeatBlast : ISlotResolver
     
     public int Check()
     {
+        if (Core.Get<IMemApiSpell>().GetActionInRangeOrLoS(SpellsDefine.HeatBlast) == 566) return -1;
         if (SpellsDefine.HeatBlast.IsReady() && Core.Get<IMemApiMCH>().OverHeated()) return 3;
         return -1;
     }

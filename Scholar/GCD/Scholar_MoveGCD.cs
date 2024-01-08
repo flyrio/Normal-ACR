@@ -14,6 +14,7 @@ public class Scholar_MoveGCD : ISlotResolver
     
     public int Check()
     {
+        if (Core.Get<IMemApiSpell>().GetActionInRangeOrLoS(SpellsDefine.SchRuin) == 566) return -1;
         if (!(SpellsDefine.LucidDreaming.IsReady() || Core.Me.HasMyAura(1204)) && Core.Me.CurrentMana < 1000 && (Core.Me.HasAura(43) || Core.Me.HasAura(44))) return -1;
         if (Core.Get<IMemApiMove>().IsMoving() && AI.Instance.CanUseGCD()) return 1;
         return -1;
@@ -22,6 +23,7 @@ public class Scholar_MoveGCD : ISlotResolver
     
     public void Build(Slot slot)
     {
+        
         if (Core.Me.ClassLevel < 39 && Qt.GetQt("DOT"))
             slot.Add(Core.Get<IMemApiSpell>().CheckActionChange(SpellsDefine.Bio.GetSpell().Id).GetSpell());
         if (Core.Me.ClassLevel >= 39)

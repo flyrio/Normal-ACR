@@ -19,6 +19,7 @@ public class Scholar_Dot : ISlotResolver
     
     public int Check()
     {
+        if (Core.Get<IMemApiSpell>().GetActionInRangeOrLoS(SpellsDefine.SchRuin) == 566) return -1;
         if (DotBlacklistHelper.IsBlackList(Core.Me.GetCurrTarget()))
             return -10;
         if (!Qt.GetQt("DOT")) return -3;
